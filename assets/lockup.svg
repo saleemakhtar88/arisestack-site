@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+
+<rect width="2400" height="1600" fill="#161210"></rect>
+<svg x="927" y="350.5" width="546" height="525" viewBox="-4 -16 104 100">
+<defs><linearGradient id="gc" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"></stop><stop offset="1" stop-color="#fef8ec"></stop></linearGradient></defs>
+<path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"></path>
+<path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"></path>
+<path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"></path>
+<path d="M 48 66 L 48 -8" fill="none" stroke="url(#gc)" stroke-width="6" stroke-linecap="round"></path>
+<path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+<text x="1200" y="1107.5" text-anchor="middle" font-family="Sora" font-weight="700" font-size="150" letter-spacing="14" fill="#fef8ec">ARISE<tspan fill="#d97706">STACK</tspan></text>
+<text x="1200" y="1241.5" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="58" letter-spacing="10" fill="#9a8163">WE RISE BY MAKING YOU RISE.</text>
+</svg>

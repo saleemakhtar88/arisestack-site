@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AriseStack — Under Construction</title>
+<meta name="description" content="AriseStack — AI Development &amp; IT Solutions. We rise by making you rise. Our new website is being forged — launching soon.">
+<meta name="author" content="AriseStack">
+<meta property="og:url" content="https://arisestack.com/">
+<meta property="og:site_name" content="AriseStack">
+<meta property="og:title" content="AriseStack — We rise by making you rise.">
+<meta property="og:description" content="AI Development &amp; IT Solutions. Our new website is being forged — launching soon.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://arisestack.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#161210">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icon-1024.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161210;
+    --copper:#92400e;
+    --amber:#d97706;
+    --gold:#fcd34d;
+    --warm-white:#fef8ec;
+    --taupe:#9a8163;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--warm-white);
+    font-family:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ---------- background scenery ---------- */
+  .scene{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .glow{
+    position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);
+    width:min(120vmin,1100px);height:min(120vmin,1100px);border-radius:50%;
+    background:radial-gradient(circle at center,
+      rgba(217,119,6,.22) 0%,
+      rgba(146,64,14,.14) 30%,
+      rgba(252,211,77,.05) 55%,
+      transparent 72%);
+    filter:blur(2px);
+    animation:breathe 7s ease-in-out infinite;
+  }
+  @keyframes breathe{0%,100%{opacity:.85;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
+  .grid{
+    position:absolute;inset:-2px;
+    background-image:
+      linear-gradient(rgba(254,248,236,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(254,248,236,.035) 1px,transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 25%,transparent 75%);
+            mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 25%,transparent 75%);
+  }
+  .horizon{
+    position:absolute;left:0;right:0;bottom:0;height:42vh;
+    background:linear-gradient(to top,rgba(146,64,14,.20),rgba(146,64,14,.06) 45%,transparent);
+  }
+  /* giant faded brand mark, floating behind everything */
+  .watermark{
+    position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+    width:min(88vmin,860px);opacity:.05;
+    animation:hover-float 11s ease-in-out infinite;
+  }
+  @keyframes hover-float{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-24px)}}
+  /* rising embers */
+  .ember{
+    position:absolute;bottom:-12px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,var(--gold),var(--amber) 60%,transparent 75%);
+    opacity:0;
+    animation:rise linear infinite;
+  }
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
+    8%{opacity:var(--o,.5)}
+    70%{opacity:var(--o,.5)}
+    100%{transform:translateY(-108vh) translateX(var(--drift,0px)) scale(.35);opacity:0}
+  }
+
+  /* ---------- content ---------- */
+  main{
+    position:relative;z-index:1;flex:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:40px 24px 24px;
+  }
+  .mark{
+    width:clamp(120px,20vmin,180px);height:auto;display:block;
+    filter:drop-shadow(0 14px 44px rgba(217,119,6,.35));
+    animation:fade-up .9s ease-out both;
+  }
+  .wordmark{
+    margin-top:26px;
+    font-family:'Sora',sans-serif;font-weight:700;
+    font-size:clamp(34px,7vw,64px);
+    letter-spacing:.09em;text-indent:.09em;
+    color:var(--warm-white);line-height:1.05;
+    animation:fade-up .9s ease-out .12s both;
+  }
+  .wordmark .stack{color:var(--amber)}
+  .slogan{
+    margin-top:12px;
+    font-family:'Space Grotesk',sans-serif;font-weight:500;
+    font-size:clamp(11px,2vw,16px);
+    letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;
+    color:var(--taupe);
+    animation:fade-up .9s ease-out .2s both;
+  }
+  @keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+  .divider{
+    display:flex;align-items:center;gap:16px;margin:32px 0 24px;
+    animation:fade-up .9s ease-out .25s both;
+  }
+  .divider .line{width:min(120px,22vw);height:1px;background:linear-gradient(90deg,transparent,var(--taupe));}
+  .divider .line:last-child{background:linear-gradient(90deg,var(--taupe),transparent)}
+  .divider .spark{width:8px;height:8px;transform:rotate(45deg);background:var(--amber);box-shadow:0 0 14px rgba(217,119,6,.9)}
+
+  h1{
+    font-family:'Space Grotesk','Outfit',sans-serif;
+    font-weight:500;
+    font-size:clamp(15px,2.6vw,22px);
+    letter-spacing:.42em;text-indent:.42em;
+    text-transform:uppercase;color:var(--warm-white);
+    animation:fade-up .9s ease-out .35s both;
+  }
+  h1 .accent{color:var(--gold)}
+  .forge-line{
+    margin-top:18px;max-width:560px;
+    font-weight:300;font-size:clamp(15px,2.2vw,19px);line-height:1.75;color:var(--taupe);
+    animation:fade-up .9s ease-out .5s both;
+  }
+  .forge-line b{color:var(--warm-white);font-weight:500}
+
+  .services{
+    margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
+    animation:fade-up .9s ease-out .65s both;
+  }
+  .chip{
+    font-family:'Space Grotesk',sans-serif;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(217,119,6,.45);border-radius:999px;
+    padding:10px 20px;background:rgba(146,64,14,.14);backdrop-filter:blur(4px);
+  }
+
+  /* forging progress */
+  .forge{
+    margin-top:44px;width:min(420px,80vw);
+    animation:fade-up .9s ease-out .8s both;
+  }
+  .forge .track{
+    height:5px;border-radius:999px;background:rgba(254,248,236,.09);overflow:hidden;position:relative;
+  }
+  .forge .metal{
+    position:absolute;inset:0;width:100%;border-radius:999px;
+    background:linear-gradient(90deg,var(--copper),var(--amber) 40%,var(--gold) 60%,var(--amber) 75%,var(--copper));
+    background-size:220% 100%;
+    animation:smelt 2.8s linear infinite;
+    -webkit-mask-image:linear-gradient(90deg,#000 0 0);
+  }
+  @keyframes smelt{from{background-position:0% 0}to{background-position:-220% 0}}
+  .forge .label{
+    margin-top:14px;font-family:'Space Grotesk',sans-serif;font-size:11.5px;
+    letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--taupe);
+  }
+  .forge .label .dots::after{content:'';animation:dots 2.4s steps(4,end) infinite}
+  @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}100%{content:''}}
+
+  footer{
+    position:relative;z-index:1;
+    padding:26px 24px 30px;text-align:center;
+    font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:var(--taupe);
+  }
+  footer .brand{color:var(--warm-white)}
+  footer .stack{color:var(--amber)}
+
+  @media (max-height:720px){
+    .mark{width:clamp(96px,16vmin,130px)}
+    .wordmark{margin-top:16px}
+    .divider{margin:20px 0 16px}
+    .services{margin-top:20px}
+    .forge{margin-top:26px}
+    .forge-line{margin-top:12px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="scene" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="grid"></div>
+    <div class="horizon"></div>
+    <!-- faded brand mark floating in the backdrop -->
+    <svg class="watermark" viewBox="-4 -16 104 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+      <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+      <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+    </svg>
+    <div id="embers"></div>
+  </div>
+
+  <main>
+    <svg class="mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AriseStack logo">
+      <defs><linearGradient id="ga" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
+      <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+      <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+      <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+      <path d="M 48 66 L 48 -8" fill="none" stroke="url(#ga)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+
+    <div class="wordmark">ARISE<span class="stack">STACK</span></div>
+    <div class="slogan">We rise by making you rise.</div>
+
+    <div class="divider" aria-hidden="true">
+      <span class="line"></span><span class="spark"></span><span class="line"></span>
+    </div>
+
+    <h1>Website <span class="accent">under construction</span></h1>
+
+    <p class="forge-line">
+      <b>We forge technology.</b> Something remarkable is taking shape here —
+      the complete technology foundation that makes your business rise.
+    </p>
+
+    <div class="services">
+      <span class="chip">AI Development</span>
+      <span class="chip">IT Solutions</span>
+      <span class="chip">Technology Stacks</span>
+    </div>
+
+    <div class="forge" role="status" aria-label="Site under construction">
+      <div class="track"><div class="metal"></div></div>
+      <div class="label">Forging in progress<span class="dots"></span></div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 <span class="brand">ARISE</span><span class="stack">STACK</span> · ARISESTACK.COM
+  </footer>
+
+  <script>
+    // rising embers — sparks from the forge
+    (function () {
+      var box = document.getElementById('embers');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      var n = Math.min(26, Math.floor(window.innerWidth / 48));
+      for (var i = 0; i < n; i++) {
+        var e = document.createElement('div');
+        e.className = 'ember';
+        var size = 2 + Math.random() * 5;
+        e.style.width = size + 'px';
+        e.style.height = size + 'px';
+        e.style.left = Math.random() * 100 + 'vw';
+        e.style.setProperty('--drift', (Math.random() * 160 - 80) + 'px');
+        e.style.setProperty('--o', (0.25 + Math.random() * 0.5).toFixed(2));
+        e.style.animationDuration = (9 + Math.random() * 14) + 's';
+        e.style.animationDelay = (-Math.random() * 20) + 's';
+        box.appendChild(e);
+      }
+    })();
+  </script>
+</body>
+</html>
