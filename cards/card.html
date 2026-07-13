@@ -31,9 +31,9 @@
   /* BACK */
   .back{background:var(--bg-2);display:flex;flex-direction:column;justify-content:center;padding:5.5mm 7mm}
   .back::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2.4mm;background:linear-gradient(180deg,var(--gold),var(--amber),var(--copper));z-index:2}
-  .back .photo{position:absolute;right:6mm;top:5.5mm;width:13mm;height:13mm;border-radius:50%;object-fit:cover;border:1.4px solid rgba(217,119,6,.65);box-shadow:0 3px 10px rgba(0,0,0,.45)}
-  .back .nm{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;line-height:1.12;padding-right:16mm}
-  .back .role{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:1.4mm;padding-right:16mm}
+  .back .miniMark{position:absolute;right:6mm;top:5mm;width:8.5mm;opacity:.92}
+  .back .nm{font-family:'Sora',sans-serif;font-weight:700;font-size:13.5px;line-height:1.1;padding-right:12mm}
+  .back .role{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:1.4mm;padding-right:12mm}
   .back .sep{height:1px;background:var(--line);margin:2.6mm 0}
   .back .row{display:flex;align-items:center;gap:2.4mm;font-size:8.5px;color:#e9dcc9;margin:.9mm 0}
   .back .row svg{width:3.2mm;height:3.2mm;color:var(--amber);flex:0 0 auto}
@@ -63,7 +63,7 @@
     </div>
     <div class="card back">
       <div class="grid-bg"></div>
-      <img class="photo" id="photo" src="" alt="">
+      <svg class="miniMark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/></svg>
       <div class="nm" id="nm">Name</div>
       <div class="role" id="role">Role</div>
       <div class="sep"></div>
@@ -84,8 +84,6 @@
   document.getElementById('nm').innerHTML = p.nm;
   document.getElementById('role').innerHTML = p.role;
   document.getElementById('phone').textContent = p.phone;
-  document.getElementById('photo').src = p.img;
-  document.getElementById('photo').alt = p.nm.replace('&amp;','&');
   document.body.className = (q.get('mode') === 'shot') ? 'shot' : 'pdf';
 </script>
 </body>
