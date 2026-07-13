@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AriseStack Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#161210;--bg-2:#1d1713;--copper:#92400e;--amber:#d97706;--gold:#fcd34d;--warm-white:#fef8ec;--taupe:#9a8163;--line:rgba(254,248,236,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#0c0a09;font-family:'Outfit',sans-serif;color:var(--warm-white);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  b{font-weight:600}
+
+  .card{width:88.9mm;height:50.8mm;position:relative;overflow:hidden}
+  .glow{position:absolute;left:50%;top:-40%;transform:translateX(-50%);width:130%;height:100%;background:radial-gradient(ellipse at center,rgba(217,119,6,.22),transparent 60%);pointer-events:none}
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(254,248,236,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(254,248,236,.03) 1px,transparent 1px);background-size:9mm 9mm;pointer-events:none}
+  .card>*{position:relative;z-index:1}
+
+  /* FRONT */
+  .front{background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4mm}
+  .front .mark{width:13mm;filter:drop-shadow(0 4px 14px rgba(217,119,6,.5))}
+  .front .word{font-family:'Sora',sans-serif;font-weight:700;font-size:19px;letter-spacing:.09em;margin-top:2.6mm}
+  .front .word b{color:var(--amber)}
+  .front .slogan{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-top:2mm}
+  .front .cats{font-family:'Space Grotesk',sans-serif;font-size:6.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:1.2mm}
+  .front .divider{width:32mm;height:1px;background:linear-gradient(90deg,transparent,rgba(217,119,6,.6),transparent);margin:2.4mm 0}
+  .front .offer{font-family:'Space Grotesk',sans-serif;font-size:6px;letter-spacing:.08em;color:#cbb89b;line-height:1.6;max-width:74mm}
+
+  /* BACK */
+  .back{background:var(--bg-2);display:flex;flex-direction:column;justify-content:center;padding:5.5mm 7mm}
+  .back::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2.4mm;background:linear-gradient(180deg,var(--gold),var(--amber),var(--copper));z-index:2}
+  .back .miniMark{position:absolute;right:6mm;top:5mm;width:8.5mm;opacity:.92}
+  .back .nm{font-family:'Sora',sans-serif;font-weight:700;font-size:13.5px;line-height:1.1}
+  .back .role{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:1.4mm}
+  .back .sep{height:1px;background:var(--line);margin:2.6mm 0}
+  .back .row{display:flex;align-items:center;gap:2.4mm;font-size:8.5px;color:#e9dcc9;margin:.9mm 0}
+  .back .row svg{width:3.2mm;height:3.2mm;color:var(--amber);flex:0 0 auto}
+  .back .tag{font-family:'Space Grotesk',sans-serif;font-size:6px;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-top:2.4mm}
+
+  /* PDF mode: one card per page */
+  body.pdf .card{page-break-after:always}
+  body.pdf .card:last-child{page-break-after:auto}
+  @page{size:88.9mm 50.8mm;margin:0}
+
+  /* SHOT mode: front + back side by side for a JPG preview */
+  body.shot{background:#0c0a09;padding:8mm}
+  body.shot .sheet{display:flex;gap:7mm;align-items:center}
+  body.shot .card{box-shadow:0 6px 22px rgba(0,0,0,.5);border-radius:2mm}
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="card front">
+      <div class="glow"></div><div class="grid-bg"></div>
+      <svg class="mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <div class="word">ARISE<b>STACK</b></div>
+      <div class="slogan">We rise by making you rise</div>
+      <div class="cats">AI Development · IT Solutions</div>
+      <div class="divider"></div>
+      <div class="offer" id="offer">Custom Software · ERP · AI &amp; Automation · Web &amp; Mobile Apps<br>Networks · Servers · Fiber Optic · CCTV · Security · Cloud &amp; Self-Hosted</div>
+    </div>
+    <div class="card back">
+      <div class="grid-bg"></div>
+      <svg class="miniMark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/></svg>
+      <div class="nm" id="nm">Name</div>
+      <div class="role" id="role">Role</div>
+      <div class="sep"></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span id="phone">phone</span></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@arisestack.com</div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>arisestack.com</div>
+    </div>
+  </div>
+<script>
+  var people = {
+    "1": {nm:"Saleem Akhtar", role:"Founder &amp; CEO", phone:"+92 333 8685105 · +92 302 7741277"},
+    "2": {nm:"Hafiz Muhammad Fahad", role:"Chartered Accountant · ACA, APFA", phone:"+92 336 7309716"},
+    "3": {nm:"Hafiz Muhammad Naeem", role:"Network &amp; CCTV Engineer", phone:"+92 333 8640515"},
+    "4": {nm:"Muhammad Bilal", role:"Hardware · Fiber · Network · CCTV", phone:"+92 300 6178933"}
+  };
+  var q = new URLSearchParams(location.search);
+  var p = people[q.get('p') || "1"];
+  document.getElementById('nm').innerHTML = p.nm;
+  document.getElementById('role').innerHTML = p.role;
+  document.getElementById('phone').textContent = p.phone;
+  document.body.className = (q.get('mode') === 'shot') ? 'shot' : 'pdf';
+</script>
+</body>
+</html>
