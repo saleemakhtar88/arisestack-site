@@ -213,7 +213,9 @@ a{color:inherit;text-decoration:none}
 .tile > span:last-child{font-size:14.5px;color:var(--warm-white);opacity:.92}
 .it-note{
   margin-top:22px;text-align:center;color:var(--taupe);font-size:15px;
+  max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;
 }
+.it-note b{color:var(--warm-white)}
 
 /* ---------- industries ---------- */
 .industries{
