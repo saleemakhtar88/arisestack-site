@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AriseStack — Under Construction</title>
-<meta name="description" content="AriseStack — AI Development &amp; IT Solutions. We rise by making you rise. Our new website is being forged — launching soon.">
+<title>AriseStack — AI Development &amp; IT Solutions</title>
+<meta name="description" content="AriseStack builds the complete technology foundation that makes your business rise — AI development, custom software, self-hosted infrastructure, and hardware integration. We rise by making you rise.">
 <meta name="author" content="AriseStack">
 <meta property="og:url" content="https://arisestack.com/">
 <meta property="og:site_name" content="AriseStack">
 <meta property="og:title" content="AriseStack — We rise by making you rise.">
-<meta property="og:description" content="AI Development &amp; IT Solutions. Our new website is being forged — launching soon.">
+<meta property="og:description" content="AI Development &amp; IT Solutions — enterprise software, self-hosted infrastructure, and AI systems built and run in production.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://arisestack.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,257 +19,320 @@
 <link rel="apple-touch-icon" href="/assets/icon-1024.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#161210;
-    --copper:#92400e;
-    --amber:#d97706;
-    --gold:#fcd34d;
-    --warm-white:#fef8ec;
-    --taupe:#9a8163;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    background:var(--bg);
-    color:var(--warm-white);
-    font-family:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
-    overflow-x:hidden;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
-
-  /* ---------- background scenery ---------- */
-  .scene{position:fixed;inset:0;z-index:0;pointer-events:none}
-  .glow{
-    position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);
-    width:min(120vmin,1100px);height:min(120vmin,1100px);border-radius:50%;
-    background:radial-gradient(circle at center,
-      rgba(217,119,6,.22) 0%,
-      rgba(146,64,14,.14) 30%,
-      rgba(252,211,77,.05) 55%,
-      transparent 72%);
-    filter:blur(2px);
-    animation:breathe 7s ease-in-out infinite;
-  }
-  @keyframes breathe{0%,100%{opacity:.85;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
-  .grid{
-    position:absolute;inset:-2px;
-    background-image:
-      linear-gradient(rgba(254,248,236,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(254,248,236,.035) 1px,transparent 1px);
-    background-size:56px 56px;
-    -webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 25%,transparent 75%);
-            mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 25%,transparent 75%);
-  }
-  .horizon{
-    position:absolute;left:0;right:0;bottom:0;height:42vh;
-    background:linear-gradient(to top,rgba(146,64,14,.20),rgba(146,64,14,.06) 45%,transparent);
-  }
-  /* giant faded brand mark, floating behind everything */
-  .watermark{
-    position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
-    width:min(88vmin,860px);opacity:.05;
-    animation:hover-float 11s ease-in-out infinite;
-  }
-  @keyframes hover-float{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-24px)}}
-  /* rising embers */
-  .ember{
-    position:absolute;bottom:-12px;border-radius:50%;
-    background:radial-gradient(circle at 35% 35%,var(--gold),var(--amber) 60%,transparent 75%);
-    opacity:0;
-    animation:rise linear infinite;
-  }
-  @keyframes rise{
-    0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
-    8%{opacity:var(--o,.5)}
-    70%{opacity:var(--o,.5)}
-    100%{transform:translateY(-108vh) translateX(var(--drift,0px)) scale(.35);opacity:0}
-  }
-
-  /* ---------- content ---------- */
-  main{
-    position:relative;z-index:1;flex:1;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:40px 24px 24px;
-  }
-  .mark{
-    width:clamp(120px,20vmin,180px);height:auto;display:block;
-    filter:drop-shadow(0 14px 44px rgba(217,119,6,.35));
-    animation:fade-up .9s ease-out both;
-  }
-  .wordmark{
-    margin-top:26px;
-    font-family:'Sora',sans-serif;font-weight:700;
-    font-size:clamp(34px,7vw,64px);
-    letter-spacing:.09em;text-indent:.09em;
-    color:var(--warm-white);line-height:1.05;
-    animation:fade-up .9s ease-out .12s both;
-  }
-  .wordmark .stack{color:var(--amber)}
-  .slogan{
-    margin-top:12px;
-    font-family:'Space Grotesk',sans-serif;font-weight:500;
-    font-size:clamp(11px,2vw,16px);
-    letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;
-    color:var(--taupe);
-    animation:fade-up .9s ease-out .2s both;
-  }
-  @keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-
-  .divider{
-    display:flex;align-items:center;gap:16px;margin:32px 0 24px;
-    animation:fade-up .9s ease-out .25s both;
-  }
-  .divider .line{width:min(120px,22vw);height:1px;background:linear-gradient(90deg,transparent,var(--taupe));}
-  .divider .line:last-child{background:linear-gradient(90deg,var(--taupe),transparent)}
-  .divider .spark{width:8px;height:8px;transform:rotate(45deg);background:var(--amber);box-shadow:0 0 14px rgba(217,119,6,.9)}
-
-  h1{
-    font-family:'Space Grotesk','Outfit',sans-serif;
-    font-weight:500;
-    font-size:clamp(15px,2.6vw,22px);
-    letter-spacing:.42em;text-indent:.42em;
-    text-transform:uppercase;color:var(--warm-white);
-    animation:fade-up .9s ease-out .35s both;
-  }
-  h1 .accent{color:var(--gold)}
-  .forge-line{
-    margin-top:18px;max-width:560px;
-    font-weight:300;font-size:clamp(15px,2.2vw,19px);line-height:1.75;color:var(--taupe);
-    animation:fade-up .9s ease-out .5s both;
-  }
-  .forge-line b{color:var(--warm-white);font-weight:500}
-
-  .services{
-    margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
-    animation:fade-up .9s ease-out .65s both;
-  }
-  .chip{
-    font-family:'Space Grotesk',sans-serif;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--gold);border:1px solid rgba(217,119,6,.45);border-radius:999px;
-    padding:10px 20px;background:rgba(146,64,14,.14);backdrop-filter:blur(4px);
-  }
-
-  /* forging progress */
-  .forge{
-    margin-top:44px;width:min(420px,80vw);
-    animation:fade-up .9s ease-out .8s both;
-  }
-  .forge .track{
-    height:5px;border-radius:999px;background:rgba(254,248,236,.09);overflow:hidden;position:relative;
-  }
-  .forge .metal{
-    position:absolute;inset:0;width:100%;border-radius:999px;
-    background:linear-gradient(90deg,var(--copper),var(--amber) 40%,var(--gold) 60%,var(--amber) 75%,var(--copper));
-    background-size:220% 100%;
-    animation:smelt 2.8s linear infinite;
-    -webkit-mask-image:linear-gradient(90deg,#000 0 0);
-  }
-  @keyframes smelt{from{background-position:0% 0}to{background-position:-220% 0}}
-  .forge .label{
-    margin-top:14px;font-family:'Space Grotesk',sans-serif;font-size:11.5px;
-    letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--taupe);
-  }
-  .forge .label .dots::after{content:'';animation:dots 2.4s steps(4,end) infinite}
-  @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}100%{content:''}}
-
-  footer{
-    position:relative;z-index:1;
-    padding:26px 24px 30px;text-align:center;
-    font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:var(--taupe);
-  }
-  footer .brand{color:var(--warm-white)}
-  footer .stack{color:var(--amber)}
-
-  @media (max-height:720px){
-    .mark{width:clamp(96px,16vmin,130px)}
-    .wordmark{margin-top:16px}
-    .divider{margin:20px 0 16px}
-    .services{margin-top:20px}
-    .forge{margin-top:26px}
-    .forge-line{margin-top:12px}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-  <div class="scene" aria-hidden="true">
-    <div class="glow"></div>
-    <div class="grid"></div>
-    <div class="horizon"></div>
-    <!-- faded brand mark floating in the backdrop -->
-    <svg class="watermark" viewBox="-4 -16 104 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
-      <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
-      <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
-    </svg>
-    <div id="embers"></div>
-  </div>
+<!-- ======= background scenery ======= -->
+<div class="scene" aria-hidden="true">
+  <div class="glow"></div>
+  <div class="grid"></div>
+  <div id="embers"></div>
+</div>
 
-  <main>
-    <svg class="mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AriseStack logo">
-      <defs><linearGradient id="ga" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
+<!-- ======= navigation ======= -->
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top" aria-label="AriseStack home">
+    <svg class="nav-mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="gn" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
       <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
       <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
       <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
-      <path d="M 48 66 L 48 -8" fill="none" stroke="url(#ga)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 48 66 L 48 -8" fill="none" stroke="url(#gn)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-word">ARISE<b>STACK</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#stack">The Stack</a>
+    <a href="#about">About</a>
+    <a class="nav-cta" href="#contact">Start a project</a>
+  </nav>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- ======= hero ======= -->
+  <section class="hero">
+    <svg class="hero-mark reveal" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AriseStack logo">
+      <defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
+      <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+      <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+      <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+      <path d="M 48 66 L 48 -8" fill="none" stroke="url(#gh)" stroke-width="6" stroke-linecap="round"/>
       <path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
 
-    <div class="wordmark">ARISE<span class="stack">STACK</span></div>
-    <div class="slogan">We rise by making you rise.</div>
+    <h1 class="hero-title reveal">
+      We build the stack.<br>
+      <span class="grad">Your business rises.</span>
+    </h1>
 
-    <div class="divider" aria-hidden="true">
-      <span class="line"></span><span class="spark"></span><span class="line"></span>
-    </div>
-
-    <h1>Website <span class="accent">under construction</span></h1>
-
-    <p class="forge-line">
-      <b>We forge technology.</b> Something remarkable is taking shape here —
-      the complete technology foundation that makes your business rise.
+    <p class="hero-sub reveal">
+      AriseStack designs, builds, and <b>runs</b> complete technology systems —
+      AI-powered software, enterprise platforms, and self-hosted infrastructure
+      that work around the clock in the real world.
     </p>
 
-    <div class="services">
-      <span class="chip">AI Development</span>
-      <span class="chip">IT Solutions</span>
-      <span class="chip">Technology Stacks</span>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="#contact">Start a project</a>
+      <a class="btn btn-ghost" href="#work">See our work</a>
     </div>
 
-    <div class="forge" role="status" aria-label="Site under construction">
-      <div class="track"><div class="metal"></div></div>
-      <div class="label">Forging in progress<span class="dots"></span></div>
+    <p class="hero-slogan reveal">We rise by making you rise.</p>
+  </section>
+
+  <!-- ======= trust strip ======= -->
+  <section class="strip reveal" aria-label="Highlights">
+    <div class="strip-item"><b>40+</b><span>systems &amp; projects built</span></div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><b>24/7</b><span>production systems we operate</span></div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><b>Aviation-grade</b><span>reliability &amp; security standards</span></div>
+    <div class="strip-sep"></div>
+    <div class="strip-item"><b>Self-hosted</b><span>your data stays yours</span></div>
+  </section>
+
+  <!-- ======= services ======= -->
+  <section class="section" id="services">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Services</h2>
+      <p>From an idea on a whiteboard to a system running in production — we cover every layer of the stack.</p>
     </div>
-  </main>
 
-  <footer>
-    © 2026 <span class="brand">ARISE</span><span class="stack">STACK</span> · ARISESTACK.COM
-  </footer>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 .5-.1 1-.3 1.5A4 4 0 0 1 18 11a4 4 0 0 1-1 7.7V20a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-1.3A4 4 0 0 1 6 11a4 4 0 0 1 2.3-3.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4Z"/><path d="M12 8v8"/><path d="M9 12h6"/></svg>
+        </div>
+        <h3>AI Development</h3>
+        <p>Computer vision, face recognition, OCR pipelines, intelligent document processing, and AI assistants — applied AI that solves a business problem, not a demo.</p>
+        <ul>
+          <li>Vision systems &amp; camera analytics</li>
+          <li>AI attendance &amp; identity verification</li>
+          <li>Document AI &amp; smart automation</li>
+        </ul>
+      </article>
 
-  <script>
-    // rising embers — sparks from the forge
-    (function () {
-      var box = document.getElementById('embers');
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-      var n = Math.min(26, Math.floor(window.innerWidth / 48));
-      for (var i = 0; i < n; i++) {
-        var e = document.createElement('div');
-        e.className = 'ember';
-        var size = 2 + Math.random() * 5;
-        e.style.width = size + 'px';
-        e.style.height = size + 'px';
-        e.style.left = Math.random() * 100 + 'vw';
-        e.style.setProperty('--drift', (Math.random() * 160 - 80) + 'px');
-        e.style.setProperty('--o', (0.25 + Math.random() * 0.5).toFixed(2));
-        e.style.animationDuration = (9 + Math.random() * 14) + 's';
-        e.style.animationDelay = (-Math.random() * 20) + 's';
-        box.appendChild(e);
-      }
-    })();
-  </script>
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/><path d="m7 9 2.5 2.5L7 14"/><path d="M12 14h5"/></svg>
+        </div>
+        <h3>Custom Software &amp; ERP</h3>
+        <p>Full-scale business platforms: finance with international accounting standards, HR &amp; attendance, operations, reporting, audit trails, and role-based access.</p>
+        <ul>
+          <li>ERP &amp; finance-grade accounting modules</li>
+          <li>Governance &amp; board-meeting portals</li>
+          <li>Dashboards, reports &amp; audit logging</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Web, Mobile &amp; Kiosk Apps</h3>
+        <p>Modern web apps, Android applications, and public-facing kiosk fleets — built to survive real users, flaky networks, and 16-hour duty cycles.</p>
+        <ul>
+          <li>React / Node.js web platforms</li>
+          <li>Android &amp; kiosk apps with offline sync</li>
+          <li>Progressive Web Apps &amp; push notifications</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+        </div>
+        <h3>Self-Hosted Infrastructure</h3>
+        <p>Own your data and stop paying per-seat forever. We deploy and operate mail servers, team chat, remote support, monitoring, and VPS estates — license-free.</p>
+        <ul>
+          <li>Enterprise email with DKIM / SPF / DMARC</li>
+          <li>Team chat &amp; video (Mattermost-class)</li>
+          <li>Monitoring, logging &amp; remote support</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2"/><path d="M17 4h2a1 1 0 0 1 1 1v2"/><path d="M20 17v2a1 1 0 0 1-1 1h-2"/><path d="M7 20H5a1 1 0 0 1-1-1v-2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+        </div>
+        <h3>IoT &amp; Hardware Integration</h3>
+        <p>Where software meets the physical world: barriers, RFID, cameras, controllers, and displays — wired into one coherent system.</p>
+        <ul>
+          <li>ANPR &amp; smart parking systems</li>
+          <li>RFID / access-control integration</li>
+          <li>Microcontrollers, relays &amp; LED signage</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Security, DR &amp; Operations</h3>
+        <p>Systems are only as good as their worst day. We harden, back up, monitor, and rehearse — including full disaster-recovery drills with measured failover times.</p>
+        <ul>
+          <li>Backups &amp; tested disaster recovery</li>
+          <li>Cloudflare, WAF &amp; origin lockdown</li>
+          <li>Fraud &amp; integrity detection</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======= featured work ======= -->
+  <section class="section" id="work">
+    <div class="section-head reveal">
+      <span class="eyebrow">Proof, not promises</span>
+      <h2>Featured work</h2>
+      <p>Systems we built that are running in production today — many for one of the most demanding environments there is: an international airport.</p>
+    </div>
+
+    <div class="work-list">
+      <article class="work reveal">
+        <div class="work-tag">Enterprise · ERP</div>
+        <h3>Airport ERP Platform</h3>
+        <p>A complete ERP for an international airport services operation — finance with IFRS-compliant reporting, cash-flow &amp; segment mapping, bank reconciliation, tax withholding, HR with shift rosters and attendance ledgers, flight handling, and safety &amp; quality management. Hundreds of thousands of vouchers, one system.</p>
+        <div class="chips"><span>Node.js</span><span>React</span><span>SQL Server</span><span>IFRS / IAS</span></div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-tag">AI · Governance</div>
+        <h3>Board Governance Portal with AI Attendance</h3>
+        <p>A secure portal for board meetings — directors, resolutions, and four attendance paths including physical cards and online. AI face recognition matches meeting screenshots against reference photos, with OCR assist and human review, then sends WhatsApp notifications through the official Meta API.</p>
+        <div class="chips"><span>Face Recognition</span><span>OCR</span><span>WhatsApp API</span><span>Zero-trust origin</span></div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-tag">Kiosks · Field fleet</div>
+        <h3>Passenger Feedback Kiosk Network</h3>
+        <p>A fleet of Android kiosk tablets across airport terminals collecting passenger feedback and complaints — offline-first with sync queues, locked-down kiosk mode, live fleet health, automated complaint email workflows, and an AI-style integrity engine that flags staff fraud patterns like spam-tapping and impossible entry speeds.</p>
+        <div class="chips"><span>Android / Capacitor</span><span>Offline sync</span><span>Fraud detection</span><span>Fleet management</span></div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-tag">IoT · Computer vision</div>
+        <h3>Smart Parking System</h3>
+        <p>End-to-end car parking automation: self-service entry with ANPR cameras and RFID, barrier control through industrial controllers and microcontroller relays, ticketing, tariffs, shift cash handover, lost-ticket photo galleries, and live occupancy on LED entrance boards.</p>
+        <div class="chips"><span>ANPR</span><span>RFID</span><span>Arduino</span><span>Access control</span></div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-tag">Infrastructure · DR</div>
+        <h3>Enterprise Email with Validated Disaster Recovery</h3>
+        <p>A production mail platform for hundreds of users — SPF, DKIM and DMARC enforcement, phishing filtering, off-site warm standby, and automated DNS failover triggered by monitoring. Proven in a full disaster-recovery drill: 25 minutes from outage to mail flowing through the backup, verified end-to-end.</p>
+        <div class="chips"><span>Postfix / Dovecot</span><span>Zabbix failover</span><span>Cloudflare API</span><span>DR drills</span></div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-tag">Product · Collaboration</div>
+        <h3>WorkNest — Self-Hosted Team Workspace</h3>
+        <p>Our own product: chat, projects, tasks, Kanban, calendars, and WebRTC voice/video calls in one self-hosted workspace. Docker-deployed, PWA with push notifications, plus a native Android app. Built for organizations that want Slack-class tooling without per-user license fees — on their own hardware.</p>
+        <div class="chips"><span>Socket.IO</span><span>PostgreSQL</span><span>WebRTC</span><span>Docker</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======= the stack story ======= -->
+  <section class="section stack-story" id="stack">
+    <div class="stack-grid">
+      <div class="stack-visual reveal" aria-hidden="true">
+        <svg viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="gs" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
+          <path class="layer layer-3" d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+          <path class="layer layer-2" d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+          <path class="layer layer-1" d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+          <path class="arrow-line" d="M 48 66 L 48 -8" fill="none" stroke="url(#gs)" stroke-width="6" stroke-linecap="round"/>
+          <path class="arrow-head" d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="stack-text">
+        <span class="eyebrow reveal">Why “AriseStack”</span>
+        <h2 class="reveal">Three layers. One arrow. That arrow is you.</h2>
+        <div class="stack-rows">
+          <div class="stack-row reveal">
+            <span class="dot dot-gold"></span>
+            <div><h4>Foundation</h4><p>Servers, networks, security, backups — infrastructure that stays up so everything above it can.</p></div>
+          </div>
+          <div class="stack-row reveal">
+            <span class="dot dot-amber"></span>
+            <div><h4>Software</h4><p>The applications and platforms your team and your customers touch every day — built to fit how you actually work.</p></div>
+          </div>
+          <div class="stack-row reveal">
+            <span class="dot dot-copper"></span>
+            <div><h4>Intelligence</h4><p>AI woven through the stack — vision, recognition, automation, and insight that turn data into decisions.</p></div>
+          </div>
+        </div>
+        <p class="stack-close reveal">The arrow starts inside the stack and breaks above the top —
+        <b>your growth, climbing on the foundation we forge.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= about ======= -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="eyebrow reveal">Who we are</span>
+        <h2 class="reveal">Built by an engineer who runs what he ships.</h2>
+        <p class="reveal">AriseStack was founded by <b>Saleem Akhtar</b>, a technology leader with deep, hands-on
+        experience running enterprise IT in the aviation sector — one of the most demanding, always-on
+        environments in the world. Airports don't get maintenance windows; the systems we build reflect that.</p>
+        <p class="reveal">That background shapes everything we deliver: software that ships with backups,
+        monitoring, security hardening, and a rehearsed recovery plan — not just a handover ZIP file.
+        We stay after launch, operating and improving what we build.</p>
+        <div class="about-points">
+          <div class="reveal"><b>End-to-end ownership</b><span>from the bare server to the AI layer</span></div>
+          <div class="reveal"><b>Production discipline</b><span>audits, logs, DR drills, uptime</span></div>
+          <div class="reveal"><b>License-free philosophy</b><span>self-hosted, open platforms first</span></div>
+        </div>
+      </div>
+      <div class="about-side reveal">
+        <h4>Technologies we forge with</h4>
+        <div class="chips chips-wrap">
+          <span>Node.js</span><span>React</span><span>Python</span><span>PostgreSQL</span>
+          <span>SQL Server</span><span>SQLite</span><span>Android / Capacitor</span><span>Socket.IO</span>
+          <span>WebRTC</span><span>Docker</span><span>Computer Vision</span><span>OCR</span>
+          <span>Cloudflare</span><span>Caddy / Nginx</span><span>Linux</span><span>PM2</span>
+          <span>Zabbix</span><span>Postfix</span><span>ESXi</span><span>Arduino / Pico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= contact ======= -->
+  <section class="section contact" id="contact">
+    <div class="contact-box reveal">
+      <span class="eyebrow">Let's talk</span>
+      <h2>Have a system in mind?<br><span class="grad">Let's forge it together.</span></h2>
+      <p>Tell us what you're trying to build — or what keeps breaking. We'll reply with straight answers,
+      not a sales deck.</p>
+      <a class="btn btn-primary btn-big" href="mailto:info@arisestack.com">info@arisestack.com</a>
+      <div class="contact-meta">
+        <span>Pakistan · working worldwide</span>
+        <span class="sep">·</span>
+        <a href="https://github.com/saleemakhtar88" target="_blank" rel="noopener">github.com/saleemakhtar88</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 <b class="w">ARISE</b><b class="a">STACK</b> — AI Development · IT Solutions</span>
+    <span class="footer-slogan">We rise by making you rise.</span>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
 </body>
 </html>
