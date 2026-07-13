@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /.git
+Disallow: /.well-known/
+
+Sitemap: https://arisestack.com/sitemap.xml

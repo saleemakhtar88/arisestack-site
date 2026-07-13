@@ -1,0 +1,5 @@
+# Security contact for arisestack.com — RFC 9116
+Contact: mailto:info@arisestack.com
+Preferred-Languages: en
+Canonical: https://arisestack.com/.well-known/security.txt
+Expires: 2027-07-13T00:00:00.000Z
