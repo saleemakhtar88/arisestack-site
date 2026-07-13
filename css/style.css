@@ -344,6 +344,33 @@ a{color:inherit;text-decoration:none}
   border:1px solid var(--line);border-radius:26px;padding:clamp(44px,7vw,80px) 24px;
 }
 .contact-box p{margin:18px auto 34px;max-width:480px;color:var(--taupe);font-size:16.5px}
+
+/* ---------- contact form ---------- */
+.cform{max-width:620px;margin:0 auto 30px;text-align:left}
+.cform-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.fld-full{grid-column:1 / -1}
+.cform label{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe)}
+.cform input,.cform select,.cform textarea{
+  font-family:'Outfit',sans-serif;font-size:15px;color:var(--warm-white);
+  background:rgba(254,248,236,.04);border:1px solid var(--line);border-radius:11px;
+  padding:13px 15px;width:100%;transition:border-color .2s,background .2s;
+}
+.cform textarea{resize:vertical;min-height:110px}
+.cform select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239a8163' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+.cform option{background:var(--bg-2);color:var(--warm-white)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--amber);background:rgba(217,119,6,.06)}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(154,129,99,.7)}
+.cform-submit{margin-top:20px;border:0;cursor:pointer;font-family:'Space Grotesk',sans-serif;width:auto}
+.cform-submit:disabled{opacity:.6;cursor:default}
+.cform-status{margin-top:14px;font-size:14.5px;min-height:20px;text-align:center}
+.cform-status.ok{color:var(--gold)}
+.cform-status.err{color:#f0a37e}
+.cform-or{display:flex;align-items:center;gap:16px;max-width:420px;margin:0 auto 18px;color:var(--taupe)}
+.cform-or::before,.cform-or::after{content:'';flex:1;height:1px;background:var(--line)}
+.cform-or span{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+@media (max-width:560px){.cform-grid{grid-template-columns:1fr}}
 .contact-phones{
   margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
 }

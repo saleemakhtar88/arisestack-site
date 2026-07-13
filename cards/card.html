@@ -25,14 +25,15 @@
   .front .slogan{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-top:2mm}
   .front .cats{font-family:'Space Grotesk',sans-serif;font-size:6.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:1.2mm}
   .front .divider{width:32mm;height:1px;background:linear-gradient(90deg,transparent,rgba(217,119,6,.6),transparent);margin:2.4mm 0}
-  .front .offer{font-family:'Space Grotesk',sans-serif;font-size:6px;letter-spacing:.08em;color:#cbb89b;line-height:1.6;max-width:74mm}
+  .front .offer{font-family:'Space Grotesk',sans-serif;font-size:6px;letter-spacing:.08em;color:#cbb89b;line-height:1.62;max-width:76mm}
+  .front .offer-hl{color:var(--gold);font-weight:500}
 
   /* BACK */
   .back{background:var(--bg-2);display:flex;flex-direction:column;justify-content:center;padding:5.5mm 7mm}
   .back::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2.4mm;background:linear-gradient(180deg,var(--gold),var(--amber),var(--copper));z-index:2}
-  .back .miniMark{position:absolute;right:6mm;top:5mm;width:8.5mm;opacity:.92}
-  .back .nm{font-family:'Sora',sans-serif;font-weight:700;font-size:13.5px;line-height:1.1}
-  .back .role{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:1.4mm}
+  .back .photo{position:absolute;right:6mm;top:5.5mm;width:13mm;height:13mm;border-radius:50%;object-fit:cover;border:1.4px solid rgba(217,119,6,.65);box-shadow:0 3px 10px rgba(0,0,0,.45)}
+  .back .nm{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;line-height:1.12;padding-right:16mm}
+  .back .role{font-family:'Space Grotesk',sans-serif;font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:1.4mm;padding-right:16mm}
   .back .sep{height:1px;background:var(--line);margin:2.6mm 0}
   .back .row{display:flex;align-items:center;gap:2.4mm;font-size:8.5px;color:#e9dcc9;margin:.9mm 0}
   .back .row svg{width:3.2mm;height:3.2mm;color:var(--amber);flex:0 0 auto}
@@ -58,11 +59,11 @@
       <div class="slogan">We rise by making you rise</div>
       <div class="cats">AI Development · IT Solutions</div>
       <div class="divider"></div>
-      <div class="offer" id="offer">Custom Software · ERP · AI &amp; Automation · Web &amp; Mobile Apps<br>Networks · Servers · Fiber Optic · CCTV · Security · Cloud &amp; Self-Hosted</div>
+      <div class="offer" id="offer">Custom Software · ERP · AI &amp; Automation · Web &amp; Mobile Apps<br>Networks · Servers · Fiber Optic · CCTV · Security · Cloud<br><span class="offer-hl">IT, Finance &amp; Audit Consultancy</span></div>
     </div>
     <div class="card back">
       <div class="grid-bg"></div>
-      <svg class="miniMark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/></svg>
+      <img class="photo" id="photo" src="" alt="">
       <div class="nm" id="nm">Name</div>
       <div class="role" id="role">Role</div>
       <div class="sep"></div>
@@ -73,16 +74,18 @@
   </div>
 <script>
   var people = {
-    "1": {nm:"Saleem Akhtar", role:"Founder &amp; CEO", phone:"+92 333 8685105 · +92 302 7741277"},
-    "2": {nm:"Hafiz Muhammad Fahad", role:"Chartered Accountant · ACA, APFA", phone:"+92 336 7309716"},
-    "3": {nm:"Hafiz Muhammad Naeem", role:"Network &amp; CCTV Engineer", phone:"+92 333 8640515"},
-    "4": {nm:"Muhammad Bilal", role:"Hardware · Fiber · Network · CCTV", phone:"+92 300 6178933"}
+    "1": {nm:"Saleem Akhtar", role:"Founder &amp; CEO", phone:"+92 333 8685105 · +92 302 7741277", img:"../assets/team/saleem.jpg"},
+    "2": {nm:"Hafiz Muhammad Fahad", role:"Chartered Accountant · ACA, APFA", phone:"+92 336 7309716", img:"../assets/team/fahad.jpg"},
+    "3": {nm:"Hafiz Muhammad Naeem", role:"Network &amp; CCTV Engineer", phone:"+92 333 8640515", img:"../assets/team/naeem.jpg"},
+    "4": {nm:"Muhammad Bilal", role:"Hardware · Fiber · Network · CCTV", phone:"+92 300 6178933", img:"../assets/team/bilal.jpg"}
   };
   var q = new URLSearchParams(location.search);
   var p = people[q.get('p') || "1"];
   document.getElementById('nm').innerHTML = p.nm;
   document.getElementById('role').innerHTML = p.role;
   document.getElementById('phone').textContent = p.phone;
+  document.getElementById('photo').src = p.img;
+  document.getElementById('photo').alt = p.nm.replace('&amp;','&');
   document.body.className = (q.get('mode') === 'shot') ? 'shot' : 'pdf';
 </script>
 </body>

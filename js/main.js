@@ -44,6 +44,62 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // --- contact form (FormSubmit AJAX → emails info@arisestack.com + auto-copy to sender) ---
+  var form = document.getElementById('contactForm');
+  if (form) {
+    var statusEl = document.getElementById('cfStatus');
+    var btn = form.querySelector('.cform-submit');
+    var ENDPOINT = 'https://formsubmit.co/ajax/info@arisestack.com';
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (form._honey && form._honey.value) return; // bot trap
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var data = {
+        name: name,
+        email: email,
+        phone: form.phone.value.trim(),
+        company: form.company.value.trim(),
+        subject: form.subject.value,
+        message: form.message.value.trim(),
+        _subject: 'AriseStack enquiry: ' + form.subject.value + ' — ' + name,
+        _template: 'table',
+        _replyto: email,
+        _autoresponse: 'Hi ' + name + ',\n\nThank you for contacting AriseStack — we have received your message and a copy of it is included below for your records. Our team will get back to you shortly.\n\n"' + form.message.value.trim() + '"\n\n— AriseStack\nWe rise by making you rise.\ninfo@arisestack.com · arisestack.com'
+      };
+
+      btn.disabled = true;
+      var original = btn.textContent;
+      btn.textContent = 'Sending…';
+      statusEl.className = 'cform-status';
+      statusEl.textContent = '';
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (res) {
+          if (res && (res.success === true || res.success === 'true')) {
+            form.reset();
+            statusEl.className = 'cform-status ok';
+            statusEl.textContent = '✓ Thank you — your message has been sent. A copy is on its way to your email.';
+          } else {
+            throw new Error('send failed');
+          }
+        })
+        .catch(function () {
+          statusEl.className = 'cform-status err';
+          statusEl.innerHTML = 'Sorry, something went wrong. Please email us directly at <a href="mailto:info@arisestack.com" style="color:var(--gold)">info@arisestack.com</a>.';
+        })
+        .then(function () { btn.disabled = false; btn.textContent = original; });
+    });
+  }
+
   // --- rising embers ---
   if (!reduce) {
     var box = document.getElementById('embers');

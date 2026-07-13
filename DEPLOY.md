@@ -42,7 +42,7 @@ arisestack.com, www.arisestack.com {
         # Force HTTPS for 2 years incl. subdomains (only enable once HTTPS is confirmed working)
         Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
         # Lock what the page may load — no third parties except Google Fonts
-        Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
+        Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
         # Anti-clickjacking (belt-and-braces with frame-ancestors)
         X-Frame-Options "DENY"
         # Stop MIME-type sniffing
