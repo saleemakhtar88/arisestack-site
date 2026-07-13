@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AriseStack — Brochure</title>
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161210; --bg-2:#1d1713; --copper:#92400e; --amber:#d97706;
+    --gold:#fcd34d; --warm-white:#fef8ec; --taupe:#9a8163; --line:rgba(254,248,236,.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0c0a09;font-family:'Outfit',sans-serif;font-weight:300;color:var(--warm-white);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.12}
+  b{font-weight:600}
+  .grad{background:linear-gradient(100deg,var(--gold),var(--amber) 55%,var(--copper) 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
+
+  .page{width:210mm;min-height:297mm;margin:8mm auto;background:var(--bg);position:relative;overflow:hidden;padding:20mm 18mm;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+  .glow{position:absolute;left:50%;top:-15%;transform:translateX(-50%);width:150%;height:70%;background:radial-gradient(ellipse at center,rgba(217,119,6,.16),transparent 62%);pointer-events:none}
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(254,248,236,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(254,248,236,.028) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 75%);pointer-events:none}
+  .page > *{position:relative;z-index:1}
+
+  .top{display:flex;align-items:center;gap:10px;margin-bottom:12mm}
+  .top .m{width:12mm}
+  .top .w{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:.09em;font-size:17px}
+  .top .w b{color:var(--amber)}
+  .top .sl{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+
+  .hero-mark{width:26mm;display:block;margin-bottom:6mm;filter:drop-shadow(0 8px 26px rgba(217,119,6,.35))}
+  h1.head{font-size:38px;font-weight:800;letter-spacing:-.01em}
+  p.intro{font-size:14px;line-height:1.8;color:#e9dcc9;max-width:150mm;margin-top:6mm}
+  p.intro b{color:var(--warm-white)}
+
+  .svc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm;margin-top:10mm}
+  .svc .t{background:rgba(254,248,236,.025);border:1px solid var(--line);border-radius:3mm;padding:6mm 5mm;text-align:center}
+  .svc .ico{width:11mm;height:11mm;margin:0 auto 4mm;border-radius:3mm;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(217,119,6,.22),rgba(146,64,14,.12));border:1px solid rgba(217,119,6,.35);color:var(--gold)}
+  .svc .ico svg{width:6mm;height:6mm}
+  .svc h4{font-size:12.5px;margin-bottom:2mm}
+  .svc p{font-size:10px;color:var(--taupe);line-height:1.5}
+
+  .slogan-big{margin-top:auto;text-align:center;font-family:'Sora',sans-serif;font-weight:700;font-size:22px;padding-top:10mm}
+
+  /* page 2 */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm}
+  .why .p{display:flex;gap:4mm;align-items:flex-start}
+  .why .n{width:8mm;height:8mm;flex:0 0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--amber),var(--copper));font-family:'Sora',sans-serif;font-weight:700;font-size:11px}
+  .why h4{font-size:13px;margin-bottom:1.5mm}
+  .why p{font-size:11px;color:var(--taupe);line-height:1.6}
+
+  .work{margin-top:9mm}
+  .work .item{border-left:2px solid var(--amber);padding-left:5mm;margin-bottom:4mm}
+  .work .item b{font-size:12.5px;font-family:'Sora',sans-serif}
+  .work .item span{display:block;font-size:10.5px;color:var(--taupe);margin-top:1mm}
+
+  .cta{margin-top:auto;background:var(--bg-2);border:1px solid var(--line);border-radius:5mm;padding:9mm;text-align:center}
+  .cta h3{font-size:20px;font-weight:800;margin-bottom:5mm}
+  .cta .rows{display:flex;flex-direction:column;gap:2.6mm;font-family:'Space Grotesk',sans-serif;font-size:13px}
+  .cta .rows span b{color:var(--gold)}
+
+  .foot{margin-top:8mm;padding-top:5mm;font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.14em;color:var(--taupe);display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+  .foot .a{color:var(--amber)}.foot .w2{color:var(--warm-white)}
+
+  .print-hint{max-width:210mm;margin:6mm auto 0;padding:5mm;background:#1d1713;border:1px dashed rgba(217,119,6,.4);border-radius:3mm;color:var(--taupe);font-size:12px;text-align:center}
+  .print-hint b{color:var(--gold)}
+  @media print{body{background:#fff}.print-hint{display:none}.page{margin:0;box-shadow:none;page-break-after:always}@page{size:A4;margin:0}}
+</style>
+</head>
+<body>
+
+<div class="print-hint">📄 <b>Brochure</b> — 2 pages (print on both sides of one A4). Save as PDF: <b>Ctrl+P</b> → Save as PDF → enable <b>Background graphics</b>.</div>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="top">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="sl">AI Development · IT Solutions</span>
+  </div>
+  <span class="eyebrow">We rise by making you rise</span>
+  <h1 class="head">We build the stack.<br><span class="grad">Your business rises.</span></h1>
+  <p class="intro">AriseStack designs, builds, and <b>runs</b> complete technology systems — AI-powered software, custom ERPs, web &amp; mobile apps, servers, networks, and security — for any industry. One partner, from the bare server to the intelligence layer on top.</p>
+  <div class="svc">
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div><h4>AI Development</h4><p>Chatbots, computer vision, vehicle counting, OCR &amp; automation.</p></div>
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg></div><h4>Software &amp; ERP</h4><p>Finance, payroll, HR, inventory, assets, cargo — one system.</p></div>
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h4>Web &amp; Mobile</h4><p>Websites, portals, Android &amp; iOS apps, kiosks.</p></div>
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/></svg></div><h4>Servers</h4><p>File, VPN, web, FTP, email &amp; directory — installed &amp; managed.</p></div>
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div><h4>Network &amp; Security</h4><p>Firewalls, CCTV, fiber optic, smart security.</p></div>
+    <div class="t"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h4>Integrations</h4><p>WhatsApp + ERP, alerts, reports, any-system links.</p></div>
+  </div>
+  <div class="slogan-big">You name it, we will make it — <span class="grad">InshAllah.</span></div>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b></span><span>arisestack.com</span></div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="top">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="sl">Why work with us</span>
+  </div>
+  <span class="eyebrow">Why AriseStack</span>
+  <h1 class="head" style="font-size:26px">Enterprise discipline,<br>for every business.</h1>
+  <div class="why">
+    <div class="p"><div class="n">1</div><div><h4>End-to-end ownership</h4><p>From the bare server to the AI layer — one accountable partner.</p></div></div>
+    <div class="p"><div class="n">2</div><div><h4>Production discipline</h4><p>Backups, monitoring, security hardening &amp; tested disaster recovery.</p></div></div>
+    <div class="p"><div class="n">3</div><div><h4>Own your data</h4><p>Self-hosted first — no per-seat license traps, your data stays yours.</p></div></div>
+    <div class="p"><div class="n">4</div><div><h4>18+ years of experience</h4><p>Built and run by a seasoned IT leadership team.</p></div></div>
+  </div>
+  <div class="work">
+    <span class="eyebrow">Selected work</span>
+    <div class="item" style="margin-top:5mm"><b>Enterprise ERP Platform</b><span>Finance, payroll, HR, inventory, assets &amp; cargo — hundreds of thousands of transactions.</span></div>
+    <div class="item"><b>AI Traffic Intelligence from CCTV</b><span>Counts &amp; classifies every vehicle in real time from existing cameras.</span></div>
+    <div class="item"><b>Enterprise Email with Validated DR</b><span>Hundreds of users, automated failover — proven in a 25-minute DR drill.</span></div>
+  </div>
+  <div class="cta">
+    <h3>Have a system in mind? <span class="grad">Let's forge it.</span></h3>
+    <div class="rows">
+      <span>✉ &nbsp;<b>info@arisestack.com</b></span>
+      <span>📞 &nbsp;+92 333 8685105 &nbsp;·&nbsp; +92 302 7741277</span>
+      <span>🌐 &nbsp;arisestack.com &nbsp;·&nbsp; Pakistan · working worldwide</span>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b> — We rise by making you rise</span><span>arisestack.com</span></div>
+</section>
+
+</body>
+</html>
