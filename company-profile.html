@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AriseStack — Company Profile</title>
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161210; --bg-2:#1d1713; --copper:#92400e; --amber:#d97706;
+    --gold:#fcd34d; --warm-white:#fef8ec; --taupe:#9a8163; --line:rgba(254,248,236,.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0c0a09;font-family:'Outfit',sans-serif;font-weight:300;color:var(--warm-white);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15}
+  b{font-weight:600}
+  .grad{background:linear-gradient(100deg,var(--gold),var(--amber) 55%,var(--copper) 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--amber)}
+
+  /* A4 page */
+  .page{
+    width:210mm;min-height:297mm;margin:8mm auto;background:var(--bg);position:relative;overflow:hidden;
+    padding:22mm 20mm;display:flex;flex-direction:column;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+  }
+  .glow{position:absolute;left:50%;top:-20%;transform:translateX(-50%);width:150%;height:80%;
+    background:radial-gradient(ellipse at center,rgba(217,119,6,.14),transparent 62%);pointer-events:none}
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(254,248,236,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(254,248,236,.028) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 75%);pointer-events:none}
+  .page > *{position:relative;z-index:1}
+
+  .mark{width:22mm;height:auto}
+  .pg-head{display:flex;align-items:center;gap:10px;margin-bottom:14mm}
+  .pg-head .m{width:11mm}
+  .pg-head .w{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:.09em;font-size:15px}
+  .pg-head .w b{color:var(--amber)}
+  .pg-num{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--taupe);letter-spacing:.2em}
+
+  h2.title{font-size:30px;font-weight:800;margin:6px 0 18px}
+  p.lead{font-size:14px;line-height:1.85;color:#e9dcc9;max-width:150mm}
+  p.lead b{color:var(--warm-white)}
+
+  /* cover */
+  .cover{justify-content:center;align-items:center;text-align:center}
+  .cover .mark{width:44mm;margin-bottom:10mm;filter:drop-shadow(0 12px 40px rgba(217,119,6,.4))}
+  .cover .brand{font-family:'Sora',sans-serif;font-weight:700;font-size:44px;letter-spacing:.09em}
+  .cover .brand b{color:var(--amber)}
+  .cover .slogan{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe);margin-top:12px}
+  .cover .divider{width:60mm;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:16mm auto 10mm}
+  .cover .doc{font-family:'Sora',sans-serif;font-weight:700;font-size:22px}
+  .cover .yr{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;color:var(--gold);margin-top:8px}
+  .cover .tag{margin-top:4mm;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);font-family:'Space Grotesk',sans-serif}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:8mm}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:5mm;padding:8mm}
+  .card h4{font-size:15px;margin-bottom:6px}
+  .card h4 .ic{color:var(--gold);margin-right:6px}
+  .card p{font-size:12.5px;line-height:1.7;color:var(--taupe)}
+
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm}
+  .svc .row{display:flex;gap:10px;align-items:flex-start;background:rgba(254,248,236,.025);border:1px solid var(--line);border-radius:3mm;padding:5mm}
+  .svc .ico{width:9mm;height:9mm;flex:0 0 auto;border-radius:2.4mm;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(217,119,6,.22),rgba(146,64,14,.12));border:1px solid rgba(217,119,6,.35);color:var(--gold)}
+  .svc .ico svg{width:5mm;height:5mm}
+  .svc h4{font-size:13px;margin-bottom:3px}
+  .svc p{font-size:11px;color:var(--taupe);line-height:1.55}
+
+  .work-item{border-left:2px solid var(--amber);padding:2mm 0 2mm 6mm;margin-bottom:6mm}
+  .work-item .k{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+  .work-item h4{font-size:15px;margin:3px 0 4px}
+  .work-item p{font-size:12px;color:var(--taupe);line-height:1.65}
+
+  .team{display:grid;grid-template-columns:1fr 1fr;gap:7mm;margin-top:8mm}
+  .member{display:flex;gap:6mm;align-items:center;background:var(--bg-2);border:1px solid var(--line);border-radius:4mm;padding:6mm}
+  .member img{width:22mm;height:22mm;border-radius:50%;object-fit:cover;border:2px solid rgba(217,119,6,.5);flex:0 0 auto}
+  .member .av{width:22mm;height:22mm;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:20px;background:linear-gradient(135deg,var(--amber),var(--copper));flex:0 0 auto}
+  .member h4{font-size:14px}
+  .member .role{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:2px 0 4px}
+  .member p{font-size:11px;color:var(--taupe);line-height:1.5}
+
+  /* contact / back */
+  .contact{justify-content:center;align-items:center;text-align:center}
+  .contact .mark{width:30mm;margin-bottom:8mm}
+  .contact h2{font-size:26px;font-weight:800;margin-bottom:4mm}
+  .contact .line{font-size:15px;color:#e9dcc9;margin:2mm 0}
+  .contact .line b{color:var(--gold)}
+  .contact .rows{margin-top:8mm;display:flex;flex-direction:column;gap:4mm;font-family:'Space Grotesk',sans-serif;font-size:14px}
+  .contact .rows span{color:var(--warm-white)}
+  .contact .slogan-b{margin-top:12mm;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe)}
+
+  .foot{margin-top:auto;padding-top:8mm;font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.14em;color:var(--taupe);display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+  .foot b{color:var(--warm-white)}.foot .a{color:var(--amber)}
+
+  .print-hint{max-width:210mm;margin:6mm auto 0;padding:5mm;background:#1d1713;border:1px dashed rgba(217,119,6,.4);border-radius:3mm;color:var(--taupe);font-size:12px;text-align:center}
+  .print-hint b{color:var(--gold)}
+
+  @media print{
+    body{background:#fff}
+    .print-hint{display:none}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto;page-break-after:always}
+    @page{size:A4;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="print-hint">📄 This is your <b>Company Profile</b>. To save as PDF: press <b>Ctrl+P</b> (or Cmd+P) → Destination <b>Save as PDF</b> → enable <b>Background graphics</b> → Save. Share it on WhatsApp/email.</div>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <svg class="mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs>
+    <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+    <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+    <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+    <path d="M 48 66 L 48 -8" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>
+  <div class="brand">ARISE<b>STACK</b></div>
+  <div class="slogan">We rise by making you rise</div>
+  <div class="divider"></div>
+  <div class="doc">Company Profile</div>
+  <div class="yr">2026</div>
+  <div class="tag">AI Development · IT Solutions</div>
+</section>
+
+<!-- ============ ABOUT US ============ -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="pg-head">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="pg-num">01 · ABOUT US</span>
+  </div>
+  <span class="eyebrow">Who we are</span>
+  <h2 class="title">We build the stack.<br>Your business rises.</h2>
+  <p class="lead">
+    <b>AriseStack</b> is an AI Development and IT Solutions company that designs, builds, and <b>runs</b>
+    complete technology systems — from the bare server to the intelligence layer on top.
+    We don't just hand over software; we deliver systems that ship with backups, monitoring,
+    security hardening, and a rehearsed recovery plan, and we stay after launch to operate and improve them.
+  </p>
+  <p class="lead" style="margin-top:6mm">
+    Founded and led by <b>Saleem Akhtar</b>, our Founder &amp; CEO with <b>18+ years in IT</b>,
+    AriseStack brings enterprise-grade discipline to organizations of every size. Our team unites
+    software engineering, finance and accounting expertise, network and CCTV engineering, and
+    hardware and fiber-optic specialists — so a single partner can carry a project from idea to
+    production and beyond.
+  </p>
+  <div class="two">
+    <div class="card">
+      <h4><span class="ic">◆</span>Our Vision</h4>
+      <p>To be the technology foundation that lets every business — in any industry — rise, by making
+      world-class software, AI, and infrastructure accessible, reliable, and truly owned by our clients.</p>
+    </div>
+    <div class="card">
+      <h4><span class="ic">◆</span>Our Mission</h4>
+      <p>We forge complete, secure, self-hosted technology systems and support them for the long run —
+      turning our clients' operations into a competitive advantage. We rise by making you rise.</p>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b></span><span>arisestack.com</span></div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="pg-head">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="pg-num">02 · SERVICES</span>
+  </div>
+  <span class="eyebrow">What we do</span>
+  <h2 class="title">Every layer of the stack</h2>
+  <div class="svc">
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span><div><h4>AI Development</h4><p>Chatbots, computer vision, vehicle counting, face recognition, OCR &amp; intelligent automation.</p></div></div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg></span><div><h4>Custom Software &amp; ERP</h4><p>Finance, budgeting, payroll, HR, inventory, fixed assets, cargo &amp; more — one modular system.</p></div></div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><div><h4>Web, Mobile &amp; Kiosk Apps</h4><p>Websites, web portals, Android &amp; iOS apps, and self-service kiosk fleets with offline sync.</p></div></div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/></svg></span><div><h4>Servers &amp; Infrastructure</h4><p>File, VPN, web, FTP/SFTP, email &amp; directory servers — installed, secured &amp; managed.</p></div></div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span><div><h4>Networks &amp; Security</h4><p>Network services, firewalls, smart security &amp; CCTV, fiber optic infrastructure.</p></div></div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><div><h4>Integrations</h4><p>WhatsApp + ERP integration, automated alerts &amp; reports, and any-system-to-any-system connections.</p></div></div>
+  </div>
+  <p class="lead" style="margin-top:8mm;text-align:center;font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:var(--warm-white)">You name it, we will make it — <span class="grad">InshAllah.</span></p>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b></span><span>arisestack.com</span></div>
+</section>
+
+<!-- ============ OUR WORK ============ -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="pg-head">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="pg-num">03 · OUR WORK</span>
+  </div>
+  <span class="eyebrow">Proof, not promises</span>
+  <h2 class="title">Systems running in production</h2>
+  <div class="work-item"><div class="k">Enterprise · ERP</div><h4>Enterprise ERP Platform</h4><p>A complete modular ERP — finance with IFRS-compliant reporting, budgeting, payroll &amp; provident fund, HR &amp; attendance, stock &amp; inventory, fixed assets and cargo management. Hundreds of thousands of transactions in one system.</p></div>
+  <div class="work-item"><div class="k">AI · Governance</div><h4>Board Governance Portal with AI Attendance</h4><p>Secure board-meeting portal with AI face recognition, OCR assist, and automated WhatsApp notifications.</p></div>
+  <div class="work-item"><div class="k">AI · Computer Vision</div><h4>AI Traffic Intelligence from CCTV</h4><p>Existing cameras turned into a live analytics system that counts and classifies every vehicle in real time — no new hardware.</p></div>
+  <div class="work-item"><div class="k">Kiosks · Field Fleet</div><h4>Customer Feedback Kiosk Network</h4><p>Offline-first self-service kiosks with fraud-detection integrity engine and automated complaint workflows.</p></div>
+  <div class="work-item"><div class="k">Infrastructure · DR</div><h4>Enterprise Email with Validated Disaster Recovery</h4><p>Mail platform for hundreds of users with automated failover — proven in a full DR drill: 25 minutes, end to end.</p></div>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b></span><span>arisestack.com</span></div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="page">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="pg-head">
+    <svg class="m" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span class="w">ARISE<b>STACK</b></span><span class="pg-num">04 · OUR TEAM</span>
+  </div>
+  <span class="eyebrow">The people</span>
+  <h2 class="title">Specialists across the whole stack</h2>
+  <div class="team">
+    <div class="member"><img src="assets/team/saleem.jpg" alt="Saleem Akhtar"><div><h4>Saleem Akhtar</h4><div class="role">Founder &amp; CEO</div><p>18+ years in IT — AI, software architecture, infrastructure &amp; security.</p></div></div>
+    <div class="member"><img src="assets/team/fahad.jpg" alt="Hafiz Muhammad Fahad"><div><h4>Hafiz Muhammad Fahad</h4><div class="role">Chartered Accountant · ACA, APFA</div><p>Finance, accounting standards &amp; ERP domain expertise.</p></div></div>
+    <div class="member"><img src="assets/team/naeem.jpg" alt="Hafiz Muhammad Naeem"><div><h4>Hafiz Muhammad Naeem</h4><div class="role">Network &amp; CCTV Engineer</div><p>Enterprise networks &amp; surveillance systems.</p></div></div>
+    <div class="member"><img src="assets/team/bilal.jpg" alt="Muhammad Bilal"><div><h4>Muhammad Bilal</h4><div class="role">Hardware · Fiber · Network · CCTV</div><p>Fiber optics, structured cabling, hardware &amp; CCTV.</p></div></div>
+  </div>
+  <div class="foot"><span>© 2026 <b class="w2">ARISE</b><b class="a">STACK</b></span><span>arisestack.com</span></div>
+</section>
+
+<!-- ============ CONTACT / BACK ============ -->
+<section class="page contact">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <svg class="mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#fef8ec"/></linearGradient></defs><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="url(#g2)" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#fef8ec" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  <h2>Let's forge it together.</h2>
+  <div class="line">Have a system in mind? Tell us what you're trying to build —</div>
+  <div class="line">or what keeps breaking. We reply with <b>straight answers</b>.</div>
+  <div class="rows">
+    <span>✉  info@arisestack.com</span>
+    <span>📞  +92 333 8685105&nbsp;&nbsp;·&nbsp;&nbsp;+92 302 7741277</span>
+    <span>🌐  arisestack.com</span>
+    <span>📍  Pakistan · working worldwide</span>
+  </div>
+  <div class="slogan-b">We rise by making you rise</div>
+</section>
+
+</body>
+</html>
