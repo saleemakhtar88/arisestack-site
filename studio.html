@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AriseStack Studio — Proposals &amp; Invoices</title>
+<title>AriseStack Studio — Proposals, Invoices, Agreements</title>
 <link rel="icon" href="/assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,119 +15,146 @@
   h1,h2,h3,h4{font-family:'Sora',sans-serif}
   input,select,textarea,button{font-family:inherit}
 
-  /* ---- top bar ---- */
-  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fef8ec;display:flex;align-items:center;gap:18px;padding:12px 22px;flex-wrap:wrap}
-  .tb-brand{display:flex;align-items:center;gap:10px}
-  .tb-brand svg{width:26px}
-  .tb-brand .w{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:.07em;font-size:16px}
+  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fef8ec;display:flex;align-items:center;gap:14px;padding:10px 18px;flex-wrap:wrap}
+  .tb-brand{display:flex;align-items:center;gap:9px}
+  .tb-brand svg{width:24px}
+  .tb-brand .w{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:.07em;font-size:15px}
   .tb-brand .w b{color:var(--amber)}
-  .tb-brand .sub{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a8163;margin-left:6px}
-  .tabs{display:flex;gap:6px;margin-left:8px}
-  .tab{background:transparent;border:1px solid rgba(254,248,236,.18);color:#cbb89b;padding:8px 15px;border-radius:9px;cursor:pointer;font-size:13.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:.04em}
+  .tb-brand .sub{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a8163;margin-left:4px}
+  .tabs{display:flex;gap:5px;flex-wrap:wrap}
+  .tab{background:transparent;border:1px solid rgba(254,248,236,.18);color:#cbb89b;padding:7px 12px;border-radius:8px;cursor:pointer;font-size:13px;font-family:'Space Grotesk',sans-serif}
   .tab:hover{color:#fff;border-color:rgba(217,119,6,.5)}
   .tab.active{background:linear-gradient(100deg,var(--amber),var(--copper));color:#fff;border-color:transparent}
-  .tb-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+  .tb-right{margin-left:auto;display:flex;align-items:center;gap:8px}
   .tb-right label{font-size:12px;color:#9a8163}
-  .cur{background:#1d1713;color:#fef8ec;border:1px solid rgba(254,248,236,.2);border-radius:8px;padding:7px 10px;font-size:13px}
+  .cur{background:#1d1713;color:#fef8ec;border:1px solid rgba(254,248,236,.2);border-radius:8px;padding:6px 9px;font-size:13px}
 
-  /* ---- workspace ---- */
-  .workspace{display:grid;grid-template-columns:minmax(340px,420px) 1fr;gap:0;align-items:start}
-  .editor{padding:20px 22px;max-height:calc(100vh - 58px);overflow:auto;border-right:1px solid var(--line)}
-  .preview-wrap{padding:22px;overflow:auto;max-height:calc(100vh - 58px);background:#d7d2ca;display:flex;justify-content:center}
+  .workspace{display:grid;grid-template-columns:minmax(340px,430px) 1fr;align-items:start}
+  .editor{padding:18px 20px;max-height:calc(100vh - 54px);overflow:auto;border-right:1px solid var(--line)}
+  .preview-wrap{padding:22px;overflow:auto;max-height:calc(100vh - 54px);background:#d7d2ca;display:flex;justify-content:center}
 
-  .grp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
-  .grp h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);margin-bottom:12px}
+  .grp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:13px}
+  .grp h3{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);margin-bottom:11px}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .f{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
   .f:last-child{margin-bottom:0}
-  .f label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:'Space Grotesk',sans-serif}
+  .f label{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:'Space Grotesk',sans-serif}
   .f input,.f select,.f textarea{border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:14px;background:#fdfcfa;color:var(--ink);width:100%}
-  .f textarea{resize:vertical;min-height:70px}
+  .f textarea{resize:vertical;min-height:64px}
   .f input:focus,.f textarea:focus,.f select:focus{outline:none;border-color:var(--amber)}
+  .hintline{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.5}
 
-  .items-head,.item-row{display:grid;grid-template-columns:1fr 54px 82px 30px;gap:8px;align-items:center}
-  .items-head{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;padding:0 2px}
-  .item-row{margin-bottom:8px}
-  .item-row input{border:1px solid var(--line);border-radius:7px;padding:8px 9px;font-size:13px;width:100%;background:#fdfcfa}
-  .item-row .del{background:#faeae2;border:1px solid #f0c9b4;color:#b5502a;border-radius:7px;cursor:pointer;height:34px;font-size:15px}
-  .additem{background:#fff;border:1px dashed var(--amber);color:var(--copper);border-radius:8px;padding:9px;cursor:pointer;width:100%;font-size:13px;font-weight:500;margin-top:2px}
+  .items-head,.item-row{display:grid;grid-template-columns:1fr 52px 82px 28px;gap:7px;align-items:center}
+  .pay-head,.pay-row{display:grid;grid-template-columns:110px 1fr 96px 28px;gap:7px;align-items:center}
+  .items-head,.pay-head{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;padding:0 2px;font-family:'Space Grotesk',sans-serif}
+  .item-row,.pay-row{margin-bottom:7px}
+  .item-row input,.pay-row input{border:1px solid var(--line);border-radius:7px;padding:8px 9px;font-size:13px;width:100%;background:#fdfcfa}
+  .del{background:#faeae2;border:1px solid #f0c9b4;color:#b5502a;border-radius:7px;cursor:pointer;height:33px;font-size:15px}
+  .additem{background:#fff;border:1px dashed var(--amber);color:var(--copper);border-radius:8px;padding:8px;cursor:pointer;width:100%;font-size:13px;font-weight:500;margin-top:2px}
+  .pay-sum{display:flex;justify-content:space-between;font-size:13px;margin-top:9px;padding:8px 10px;background:#faf8f4;border-radius:8px}
+  .pay-sum b.full{color:#2e7d32}.pay-sum b.part{color:var(--copper)}.pay-sum b.unpaid{color:#b5502a}
 
   .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
-  .btn{border:0;border-radius:9px;padding:11px 16px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:'Space Grotesk',sans-serif;letter-spacing:.03em}
+  .btn{border:0;border-radius:9px;padding:10px 15px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Space Grotesk',sans-serif}
   .btn-p{background:linear-gradient(100deg,var(--amber),var(--copper));color:#fff}
   .btn-o{background:#fff;border:1px solid var(--line);color:var(--ink)}
+  .btn-g{background:#e8f2e9;border:1px solid #bcd8bf;color:#2e7d32}
   .btn-d{background:#faeae2;border:1px solid #f0c9b4;color:#b5502a}
   .btn:hover{filter:brightness(1.04)}
   .saved-note{font-size:12px;color:#2e7d32;margin-top:8px;min-height:16px}
 
-  /* ---- letterhead document ---- */
-  .doc{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.22);position:relative;padding:20mm 18mm 24mm;flex:0 0 auto;transform-origin:top center}
+  /* letterhead document */
+  .doc{width:210mm;min-height:297mm;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.22);position:relative;padding:18mm 18mm 24mm;flex:0 0 auto;transform-origin:top center}
   .doc::before{content:'';position:absolute;left:0;top:0;right:0;height:3mm;background:linear-gradient(90deg,var(--copper),var(--amber),var(--gold))}
-  .d-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:6mm;border-bottom:1.5px solid var(--line)}
+  .d-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:5mm;border-bottom:1.5px solid var(--line)}
   .d-brand{display:flex;align-items:center;gap:4mm}
-  .d-brand svg{width:15mm}
-  .d-brand .w{font-family:'Sora',sans-serif;font-weight:700;font-size:21px;letter-spacing:.06em}
+  .d-brand svg{width:14mm}
+  .d-brand .w{font-family:'Sora',sans-serif;font-weight:700;font-size:20px;letter-spacing:.06em}
   .d-brand .w b{color:var(--amber)}
   .d-brand .tag{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:2px}
-  .d-contact{text-align:right;font-size:10px;line-height:1.85;color:#4a443c}
+  .d-contact{text-align:right;font-size:9.5px;line-height:1.8;color:#4a443c}
   .d-contact b{color:var(--copper)}
-
-  .d-title{display:flex;justify-content:space-between;align-items:flex-end;margin:9mm 0 6mm}
-  .d-title .t{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:.02em;color:var(--ink)}
+  .d-title{display:flex;justify-content:space-between;align-items:flex-end;margin:8mm 0 5mm}
+  .d-title .t{font-family:'Sora',sans-serif;font-weight:800;font-size:26px;color:var(--ink)}
   .d-title .t span{color:var(--amber)}
-  .d-meta{text-align:right;font-size:11px;line-height:1.7;color:#4a443c}
+  .d-meta{text-align:right;font-size:10.5px;line-height:1.7;color:#4a443c}
   .d-meta b{color:var(--ink)}
-  .d-status{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--copper);margin-top:3px}
-
-  .d-to{margin:6mm 0;font-size:12px;line-height:1.6}
-  .d-to .lbl{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2mm}
-  .d-to .nm{font-weight:600;font-size:13.5px}
-
-  .d-headline{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;margin:5mm 0 3mm;color:var(--ink)}
-  .d-intro{font-size:12px;line-height:1.75;color:#403a33;white-space:pre-wrap;margin-bottom:5mm}
-
-  table.items{width:100%;border-collapse:collapse;margin:4mm 0 3mm;font-size:11.5px}
-  table.items th{background:#1d1713;color:#fef8ec;text-align:left;padding:7px 9px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+  .d-status{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--copper);margin-top:3px}
+  .d-status.full{border-color:#bcd8bf;color:#2e7d32;background:#eef6ef}
+  .d-status.part{border-color:#f0d9b4;color:#a05e08;background:#fdf6ea}
+  .d-to{margin:5mm 0;font-size:11.5px;line-height:1.6}
+  .d-to .lbl{font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6mm}
+  .d-to .nm{font-weight:600;font-size:13px}
+  .d-headline{font-family:'Sora',sans-serif;font-weight:700;font-size:16px;margin:4mm 0 3mm}
+  .d-intro{font-size:11.5px;line-height:1.75;color:#403a33;white-space:pre-wrap;margin-bottom:4mm}
+  table.items{width:100%;border-collapse:collapse;margin:3mm 0;font-size:11px}
+  table.items th{background:#1d1713;color:#fef8ec;text-align:left;padding:6px 8px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
   table.items th.r,table.items td.r{text-align:right}
-  table.items td{padding:7px 9px;border-bottom:1px solid var(--line);color:#333;vertical-align:top}
+  table.items td{padding:6px 8px;border-bottom:1px solid var(--line);color:#333;vertical-align:top}
   table.items tr:nth-child(even) td{background:#faf8f4}
-
-  .totals{margin-left:auto;width:78mm;font-size:12px}
-  .totals .tr{display:flex;justify-content:space-between;padding:3px 9px}
-  .totals .tr.grand{background:linear-gradient(100deg,rgba(217,119,6,.12),rgba(146,64,14,.06));border-radius:6px;margin-top:3px;padding:8px 9px;font-family:'Sora',sans-serif;font-weight:700;font-size:14px}
+  .totals{margin-left:auto;width:76mm;font-size:11.5px}
+  .totals .tr{display:flex;justify-content:space-between;padding:3px 8px}
+  .totals .tr.grand{background:linear-gradient(100deg,rgba(217,119,6,.12),rgba(146,64,14,.06));border-radius:6px;margin-top:3px;padding:7px 8px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px}
   .totals .tr.grand b{color:var(--copper)}
-
-  .d-notes{margin-top:6mm;font-size:11px;line-height:1.7;color:#4a443c;white-space:pre-wrap}
-  .d-notes .lbl{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5mm}
-  .d-bank{margin-top:5mm;padding:4mm;background:#faf8f4;border:1px solid var(--line);border-radius:2mm;font-size:11px;line-height:1.7;white-space:pre-wrap}
-
-  .d-sign{margin-top:12mm;display:flex;justify-content:space-between;font-size:11px}
-  .d-sign .box{width:60mm}
-  .d-sign .ln{border-top:1px solid #b9b1a6;margin-top:12mm;padding-top:2mm;color:var(--muted)}
-
-  .d-footer{position:absolute;left:18mm;right:18mm;bottom:11mm;padding-top:4mm;border-top:1.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:9px;letter-spacing:.05em;color:var(--muted)}
+  .totals .tr.rec span:last-child{color:#2e7d32;font-weight:600}
+  .totals .tr.bal span:last-child{color:#b5502a;font-weight:600}
+  .d-notes{margin-top:5mm;font-size:10.5px;line-height:1.7;color:#4a443c;white-space:pre-wrap}
+  .d-notes .lbl,.d-pay .lbl{font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5mm}
+  .d-bank{margin-top:4mm;padding:4mm;background:#faf8f4;border:1px solid var(--line);border-radius:2mm;font-size:10.5px;line-height:1.7;white-space:pre-wrap}
+  .d-pay{margin-top:4mm}
+  table.pays{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:1mm}
+  table.pays th{background:#f0ece5;text-align:left;padding:5px 8px;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  table.pays td{padding:5px 8px;border-bottom:1px solid var(--line)}
+  table.pays td.r,table.pays th.r{text-align:right}
+  .d-sign{margin-top:11mm;display:flex;justify-content:space-between;font-size:10.5px;page-break-inside:avoid}
+  .d-sign .box{width:58mm}
+  .d-sign .ln{border-top:1px solid #b9b1a6;margin-top:11mm;padding-top:2mm;color:var(--muted)}
+  .d-footer{position:absolute;left:18mm;right:18mm;bottom:10mm;padding-top:3.5mm;border-top:1.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:8.5px;letter-spacing:.05em;color:var(--muted)}
   .d-footer b{color:var(--ink)}.d-footer .a{color:var(--amber)}
   .d-footer .s{letter-spacing:.14em;text-transform:uppercase}
 
-  /* ---- records ---- */
-  .records{padding:26px 22px;max-width:1000px;margin:0 auto}
-  .records h2{font-size:20px;margin-bottom:16px}
-  table.rec{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
-  table.rec th{background:#f0ece5;text-align:left;padding:11px 13px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
-  table.rec td{padding:11px 13px;border-top:1px solid var(--line)}
-  table.rec .type{font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:12px;font-family:'Space Grotesk',sans-serif}
+  /* agreement text */
+  .agr{font-size:10.8px;line-height:1.72;color:#3a352e;text-align:justify}
+  .agr h4{font-family:'Sora',sans-serif;font-size:12px;margin:4.5mm 0 1.6mm;color:var(--ink);page-break-after:avoid}
+  .agr p{margin-bottom:2mm}
+  .agr ul{margin:0 0 2mm 5mm}
+  .agr li{margin-bottom:1mm}
+  .agr .recital{background:#faf8f4;border:1px solid var(--line);border-radius:2mm;padding:3.5mm;margin:3mm 0}
+  .pb{page-break-before:always;padding-top:4mm}
+
+  /* lists */
+  .listwrap{padding:24px 22px;max-width:1080px;margin:0 auto}
+  .listwrap h2{font-size:19px;margin-bottom:14px}
+  table.rec{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px}
+  table.rec th{background:#f0ece5;text-align:left;padding:10px 12px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  table.rec td{padding:10px 12px;border-top:1px solid var(--line)}
+  table.rec td.r,table.rec th.r{text-align:right}
+  .type{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:12px;font-family:'Space Grotesk',sans-serif;white-space:nowrap}
   .type.proposal{background:#eef4ff;color:#2b5fb0}
   .type.invoice{background:#fff2e6;color:var(--copper)}
-  table.rec .mini{border:0;background:transparent;cursor:pointer;color:var(--copper);font-size:12.5px;padding:3px 6px;font-weight:600}
-  table.rec .mini.del{color:#b5502a}
-  .empty{text-align:center;color:var(--muted);padding:40px;font-size:14px}
+  .type.agreement{background:#efe9fb;color:#6741b5}
+  .chip{font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:12px;font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+  .chip.full{background:#e8f2e9;color:#2e7d32}
+  .chip.part{background:#fdf3e0;color:#a05e08}
+  .chip.unpaid{background:#faeae2;color:#b5502a}
+  .chip.approved{background:#e8f2e9;color:#2e7d32}
+  .chip.sent{background:#eef4ff;color:#2b5fb0}
+  .chip.rejected{background:#f2f2f2;color:#777}
+  .chip.draft{background:#f2f2f2;color:#777}
+  .mini{border:0;background:transparent;cursor:pointer;color:var(--copper);font-size:12.5px;padding:3px 6px;font-weight:600}
+  .mini.del{color:#b5502a}
+  .empty{text-align:center;color:var(--muted);padding:36px;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:12px}
+  .client-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+  .client-card h3{font-size:15px}
+  .client-card .sub{font-size:12px;color:var(--muted);margin:2px 0 8px}
+  .rep-tbl{margin:6px 0 2px 0}
+  .rep-sum{display:flex;gap:18px;font-size:12.5px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+  .rep-sum b{color:var(--ink)}
 
   @media (max-width:900px){.workspace{grid-template-columns:1fr}.editor{max-height:none;border-right:0;border-bottom:1px solid var(--line)}.preview-wrap{max-height:none}}
-
-  /* ---- print ---- */
   @media print{
     body{background:#fff}
-    .topbar,.editor,.actions,.records,#saveNote{display:none !important}
+    .topbar,.editor,.listwrap,.saved-note{display:none !important}
     .preview-wrap{padding:0;max-height:none;overflow:visible;background:#fff;display:block}
     .doc{box-shadow:none;margin:0;width:auto;min-height:auto;transform:none !important}
     .d-footer{position:fixed}
@@ -145,7 +172,10 @@
   <div class="tabs">
     <button class="tab active" data-tab="proposal" onclick="switchTab('proposal')">＋ Proposal</button>
     <button class="tab" data-tab="invoice" onclick="switchTab('invoice')">＋ Invoice</button>
+    <button class="tab" data-tab="agreement" onclick="switchTab('agreement')">＋ Agreement</button>
+    <button class="tab" data-tab="clients" onclick="switchTab('clients')">☺ Clients</button>
     <button class="tab" data-tab="records" onclick="switchTab('records')">▤ Records</button>
+    <button class="tab" data-tab="report" onclick="switchTab('report')">📊 Report</button>
   </div>
   <div class="tb-right">
     <label>Currency</label>
@@ -156,40 +186,50 @@
 </div>
 
 <div class="workspace" id="workspace">
-  <!-- EDITOR -->
   <div class="editor" id="editor">
+
     <div class="grp">
       <h3 id="grpHead">Proposal details</h3>
       <div class="row2">
         <div class="f"><label id="numLabel">Proposal #</label><input id="num" oninput="update()"></div>
         <div class="f"><label>Date</label><input id="date" type="date" oninput="update()"></div>
       </div>
+      <div class="row2" id="propStatusRow">
+        <div class="f"><label>Status</label><select id="pstatus" onchange="update()"><option>Draft</option><option>Sent</option><option>Approved</option><option>Rejected</option></select></div>
+        <div class="f" style="justify-content:flex-end"><button class="btn btn-g" id="makeInvBtn" onclick="createInvoiceFromProposal()" style="display:none">→ Create linked invoice</button></div>
+      </div>
       <div class="row2" id="invExtra" style="display:none">
         <div class="f"><label>Due date</label><input id="dueDate" type="date" oninput="update()"></div>
-        <div class="f"><label>Status</label><select id="status" onchange="update()"><option>Draft</option><option>Sent</option><option>Paid</option><option>Overdue</option></select></div>
+        <div class="f"><label>Linked proposal</label><select id="invProposal" onchange="update()"></select></div>
       </div>
-      <div class="f" id="propTitleF"><label>Proposal title</label><input id="title" placeholder="e.g. ERP System Development &amp; Deployment" oninput="update()"></div>
+      <div class="f" id="propTitleF"><label id="titleLabel">Proposal title</label><input id="title" placeholder="e.g. ERP System Development &amp; Deployment" oninput="update()"></div>
     </div>
 
     <div class="grp">
-      <h3 id="clientHead">Prepared for</h3>
-      <div class="row2">
-        <div class="f"><label>Contact name</label><input id="cname" oninput="update()"></div>
-        <div class="f"><label>Company</label><input id="ccompany" oninput="update()"></div>
+      <h3 id="clientHead">Client</h3>
+      <div class="f"><label>Select client</label>
+        <select id="clientSel" onchange="clientSelChanged()"></select>
       </div>
-      <div class="row2">
-        <div class="f"><label>Email</label><input id="cemail" oninput="update()"></div>
-        <div class="f"><label>Phone</label><input id="cphone" oninput="update()"></div>
+      <div id="clientFields">
+        <div class="row2">
+          <div class="f"><label>Contact name</label><input id="cname" oninput="update()"></div>
+          <div class="f"><label>Company</label><input id="ccompany" oninput="update()"></div>
+        </div>
+        <div class="row2">
+          <div class="f"><label>Email</label><input id="cemail" oninput="update()"></div>
+          <div class="f"><label>Phone</label><input id="cphone" oninput="update()"></div>
+        </div>
+        <div class="f"><label>Address</label><input id="caddress" oninput="update()"></div>
       </div>
-      <div class="f"><label>Address</label><input id="caddress" oninput="update()"></div>
+      <div class="hintline" id="clientHint">New client? Leave "— New client —" selected and fill any details you have — the client is <b>added automatically on Save</b>; you can complete their profile later under <b>Clients</b>.</div>
     </div>
 
     <div class="grp" id="introGrp">
       <h3>Introduction</h3>
-      <div class="f"><textarea id="intro" placeholder="A short intro / cover note for the proposal…" oninput="update()"></textarea></div>
+      <div class="f"><textarea id="intro" placeholder="A short intro / cover note…" oninput="update()"></textarea></div>
     </div>
 
-    <div class="grp">
+    <div class="grp" id="itemsGrp">
       <h3 id="itemsHead">Scope &amp; pricing</h3>
       <div class="items-head"><span>Description</span><span>Qty</span><span>Rate</span><span></span></div>
       <div id="itemsBox"></div>
@@ -197,7 +237,37 @@
       <div class="f" style="margin-top:12px"><label>Tax / GST (%)</label><input id="tax" type="number" value="0" min="0" step="0.5" oninput="update()" style="max-width:110px"></div>
     </div>
 
-    <div class="grp">
+    <div class="grp" id="payGrp" style="display:none">
+      <h3>Payments received</h3>
+      <div class="pay-head"><span>Date</span><span>Note / method</span><span>Amount</span><span></span></div>
+      <div id="paysBox"></div>
+      <button class="additem" onclick="addPay()">＋ Add payment</button>
+      <div class="pay-sum" id="paySum"></div>
+    </div>
+
+    <div class="grp" id="agrGrp" style="display:none">
+      <h3>Agreement setup</h3>
+      <div class="f"><label>Based on proposal (optional — pulls scope &amp; amount)</label><select id="agrProposal" onchange="agrProposalChanged()"></select></div>
+      <div class="row2">
+        <div class="f"><label>Project title</label><input id="agrTitle" oninput="update()"></div>
+        <div class="f"><label>Start date</label><input id="agrStart" type="date" oninput="update()"></div>
+      </div>
+      <div class="row2">
+        <div class="f"><label>Duration</label><input id="agrDuration" placeholder="e.g. 12 weeks" oninput="update()"></div>
+        <div class="f"><label>Contract value (0 = as per proposal/quote)</label><input id="agrValue" type="number" min="0" oninput="update()"></div>
+      </div>
+      <div class="f"><label>Payment terms</label><input id="agrPay" oninput="update()"></div>
+      <div class="row2">
+        <div class="f"><label>Support / warranty period</label><input id="agrWarranty" oninput="update()"></div>
+        <div class="f"><label>Jurisdiction</label><input id="agrLaw" oninput="update()"></div>
+      </div>
+      <div class="f"><label>Attach NDA annex (client signs with agreement)</label>
+        <select id="agrNda" onchange="update()"><option value="1">Yes — include NDA (Annex A)</option><option value="0">No</option></select>
+      </div>
+      <div class="hintline">The agreement text is generated automatically with all standard clauses (development, timeline, payment, security &amp; cybersecurity, backups, confidentiality, IP, warranty, liability, termination, force majeure, law). <b>Template only — have a lawyer review before major contracts.</b></div>
+    </div>
+
+    <div class="grp" id="notesGrp">
       <h3 id="notesHead">Terms &amp; notes</h3>
       <div class="f"><textarea id="notes" placeholder="Payment terms, validity, delivery timeline…" oninput="update()"></textarea></div>
       <div class="f" id="bankF" style="display:none"><label>Payment / bank details</label><textarea id="bank" placeholder="Account title, bank, account #, IBAN…" oninput="update()"></textarea></div>
@@ -212,248 +282,578 @@
     <div class="saved-note" id="saveNote"></div>
   </div>
 
-  <!-- PREVIEW -->
   <div class="preview-wrap" id="previewWrap">
     <div class="doc" id="doc"></div>
   </div>
 </div>
 
-<!-- RECORDS -->
-<div class="records" id="records" hidden>
+<div class="listwrap" id="clientsView" hidden>
+  <h2>Clients</h2>
+  <div class="client-card">
+    <h3 style="font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--copper);margin-bottom:10px">Add / edit client</h3>
+    <input type="hidden" id="clEditId">
+    <div class="row2">
+      <div class="f"><label>Contact name *</label><input id="clName"></div>
+      <div class="f"><label>Company</label><input id="clCompany"></div>
+    </div>
+    <div class="row2">
+      <div class="f"><label>Email</label><input id="clEmail"></div>
+      <div class="f"><label>Phone / WhatsApp</label><input id="clPhone"></div>
+    </div>
+    <div class="row2">
+      <div class="f"><label>Address</label><input id="clAddress"></div>
+      <div class="f"><label>NTN / Tax ID</label><input id="clTax"></div>
+    </div>
+    <div class="f"><label>Notes</label><input id="clNotes"></div>
+    <div class="actions"><button class="btn btn-p" onclick="saveClientForm()">💾 Save client</button><button class="btn btn-o" onclick="clearClientForm()">Clear</button></div>
+    <div class="saved-note" id="clNote"></div>
+  </div>
+  <div id="clientListBox"></div>
+</div>
+
+<div class="listwrap" id="recordsView" hidden>
   <h2>Saved records</h2>
   <div id="recBox"></div>
+</div>
+
+<div class="listwrap" id="reportView" hidden>
+  <h2>Client report — proposals, invoices &amp; payments</h2>
+  <div id="repBox"></div>
 </div>
 
 <script>
 (function(){
   'use strict';
-  var KEY = 'as_studio_v1';
-  var MARK = '<svg viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dm" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#161210"/></linearGradient></defs><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="url(#dm)" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#161210" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+  var KEY='as_studio_v2', OLDKEY='as_studio_v1';
+  var MARK='<svg viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dm" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#161210"/></linearGradient></defs><path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/><path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/><path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/><path d="M 48 66 L 48 -8" fill="none" stroke="url(#dm)" stroke-width="6" stroke-linecap="round"/><path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#161210" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+  var HEADER='<div class="d-header"><div class="d-brand">'+MARK+'<div><div class="w">ARISE<b>STACK</b></div><div class="tag">AI Development · IT Solutions</div></div></div><div class="d-contact"><b>info@arisestack.com</b><br>+92 333 8685105 · +92 302 7741277<br>arisestack.com<br>Pakistan · working worldwide</div></div>';
+  var FOOTER='<div class="d-footer"><span><b>ARISE</b><span class="a">STACK</span> — We rise by making you rise.</span><span class="s">arisestack.com</span></div>';
 
-  var state = null;
-  window.state = null;
+  var state=null; window.state=null;
+  function $(id){return document.getElementById(id);}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function uid(p){return (p||'x')+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+  function todayISO(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function fmtDate(iso){if(!iso)return '';var p=String(iso).split('-');if(p.length!==3)return iso;var m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return p[2]+' '+m[+p[1]-1]+' '+p[0];}
+  function num2(n){return Number(n)||0;}
+  function money(n,cur){n=num2(n);return (cur||state&&state.currency||'Rs')+' '+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2});}
 
-  function $(id){ return document.getElementById(id); }
-  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || []; }catch(e){ return []; } }
-  function saveAll(a){ localStorage.setItem(KEY, JSON.stringify(a)); }
-  function uid(){ return 'd' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
-  function todayISO(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
-  function fmtDate(iso){ if(!iso) return ''; var p=iso.split('-'); if(p.length!==3) return iso; var m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return p[2]+' '+m[+p[1]-1]+' '+p[0]; }
-  function money(n){ n=Number(n)||0; return (state.currency||'Rs')+' '+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2}); }
+  /* ---------- DB ---------- */
+  function db(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY));
+      if(d && d.clients && d.docs) return d;
+    }catch(e){}
+    var fresh={clients:[],docs:[]};
+    try{ // migrate v1
+      var old=JSON.parse(localStorage.getItem(OLDKEY));
+      if(Array.isArray(old)) old.forEach(function(o){ o.clientSnap=o.client||{}; delete o.client; fresh.docs.push(o); });
+    }catch(e){}
+    localStorage.setItem(KEY,JSON.stringify(fresh));
+    return fresh;
+  }
+  function saveDb(d){localStorage.setItem(KEY,JSON.stringify(d));}
+  function clientById(id){return db().clients.find(function(c){return c.id===id;})||null;}
+  function docById(id){return db().docs.find(function(d){return d.id===id;})||null;}
 
   function nextNum(type){
-    var all = load().filter(function(d){ return d.type===type; });
-    var yr = new Date().getFullYear();
-    var pre = (type==='invoice'?'INV-':'PROP-')+yr+'-';
-    var max = 0;
-    all.forEach(function(d){ var m=/(\d+)$/.exec(d.num||''); if(m){ var v=+m[1]; if(v>max) max=v; } });
-    return pre + String(max+1).padStart(3,'0');
+    var pre = type==='invoice'?'INV-':type==='agreement'?'AGR-':'PROP-';
+    pre += new Date().getFullYear()+'-';
+    var max=0;
+    db().docs.filter(function(d){return d.type===type;}).forEach(function(d){var m=/(\d+)$/.exec(d.num||'');if(m&&+m[1]>max)max=+m[1];});
+    return pre+String(max+1).padStart(3,'0');
   }
 
-  function newDoc(type, keepClient){
-    var prevClient = (keepClient && state) ? state.client : {name:'',company:'',email:'',phone:'',address:''};
-    state = {
-      id: uid(), type: type, num: nextNum(type), date: todayISO(), dueDate:'', status: type==='invoice'?'Draft':'Sent',
-      currency: $('currency').value, client: prevClient, title:'', intro:'',
-      items: [{desc:'', qty:1, rate:0}], taxPct:0, notes:'', bank:''
+  /* ---------- doc state ---------- */
+  function newDoc(type,keepClient){
+    var prevCid=(keepClient&&state)?state.clientId:'';
+    var prevSnap=(keepClient&&state)?state.clientSnap:{};
+    state={
+      id:uid('d'),type:type,num:nextNum(type),date:todayISO(),
+      clientId:prevCid||'',clientSnap:prevSnap||{name:'',company:'',email:'',phone:'',address:''},
+      currency:$('currency').value,
+      title:'',intro:'',items:[{desc:'',qty:1,rate:0}],taxPct:0,notes:'',
+      // proposal
+      pstatus:'Sent',linkedInvoiceIds:[],
+      // invoice
+      dueDate:'',bank:'',payments:[],proposalId:'',
+      // agreement
+      agr:{proposalId:'',title:'',start:todayISO(),duration:'12 weeks',value:0,pay:'50% advance, 40% on delivery, 10% after acceptance testing',warranty:'90 days post-delivery bug-fix warranty',law:'Pakistan',nda:true}
     };
-    window.state = state;
+    window.state=state;
     fillEditor(); render(); setSaved('');
     $('delBtn').style.display='none';
   }
 
+  /* ---------- editor fill ---------- */
+  function clientOptions(sel){
+    var opts='<option value="new">— New client —</option>';
+    db().clients.slice().sort(function(a,b){return (a.company||a.name).localeCompare(b.company||b.name);}).forEach(function(c){
+      opts+='<option value="'+c.id+'"'+(sel===c.id?' selected':'')+'>'+esc((c.company?c.company+' — ':'')+c.name)+'</option>';
+    });
+    return opts;
+  }
+  function proposalOptions(sel,clientId){
+    var opts='<option value="">— none —</option>';
+    db().docs.filter(function(d){return d.type==='proposal'&&(!clientId||d.clientId===clientId);}).forEach(function(p){
+      var who=snapOf(p); opts+='<option value="'+p.id+'"'+(sel===p.id?' selected':'')+'>'+esc(p.num+' · '+(p.title||'untitled')+(who.company?' ('+who.company+')':''))+'</option>';
+    });
+    return opts;
+  }
+  function snapOf(doc){
+    if(doc.clientId){var c=clientById(doc.clientId); if(c) return c;}
+    return doc.clientSnap||{};
+  }
+
   function fillEditor(){
-    $('currency').value = state.currency;
-    $('num').value = state.num; $('date').value = state.date;
-    $('dueDate').value = state.dueDate||''; $('status').value = state.status||'Draft';
-    $('title').value = state.title||''; $('intro').value = state.intro||'';
-    $('cname').value = state.client.name||''; $('ccompany').value=state.client.company||'';
-    $('cemail').value = state.client.email||''; $('cphone').value=state.client.phone||'';
-    $('caddress').value = state.client.address||'';
-    $('tax').value = state.taxPct||0; $('notes').value = state.notes||''; $('bank').value = state.bank||'';
-    renderItems();
-    applyTypeUI();
+    $('currency').value=state.currency;
+    $('num').value=state.num; $('date').value=state.date;
+    $('pstatus').value=state.pstatus||'Sent';
+    $('dueDate').value=state.dueDate||'';
+    $('title').value=state.title||''; $('intro').value=state.intro||'';
+    $('clientSel').innerHTML=clientOptions(state.clientId||'new');
+    $('clientSel').value=state.clientId||'new';
+    var s=state.clientSnap||{};
+    $('cname').value=s.name||'';$('ccompany').value=s.company||'';$('cemail').value=s.email||'';$('cphone').value=s.phone||'';$('caddress').value=s.address||'';
+    $('tax').value=state.taxPct||0;$('notes').value=state.notes||'';$('bank').value=state.bank||'';
+    $('invProposal').innerHTML=proposalOptions(state.proposalId,state.clientId);
+    var a=state.agr||{};
+    $('agrProposal').innerHTML=proposalOptions(a.proposalId,state.clientId);
+    $('agrTitle').value=a.title||'';$('agrStart').value=a.start||todayISO();$('agrDuration').value=a.duration||'';
+    $('agrValue').value=a.value||0;$('agrPay').value=a.pay||'';$('agrWarranty').value=a.warranty||'';$('agrLaw').value=a.law||'Pakistan';
+    $('agrNda').value=a.nda?'1':'0';
+    renderItems(); renderPays(); applyTypeUI(); clientFieldsVisibility();
   }
 
   function applyTypeUI(){
-    var inv = state.type==='invoice';
-    $('grpHead').textContent = inv?'Invoice details':'Proposal details';
-    $('numLabel').textContent = inv?'Invoice #':'Proposal #';
+    var t=state.type, inv=t==='invoice', agr=t==='agreement', prop=t==='proposal';
+    $('grpHead').textContent = inv?'Invoice details':agr?'Agreement details':'Proposal details';
+    $('numLabel').textContent = inv?'Invoice #':agr?'Agreement #':'Proposal #';
+    $('propStatusRow').style.display = prop?'grid':'none';
     $('invExtra').style.display = inv?'grid':'none';
-    $('propTitleF').style.display = inv?'none':'flex';
-    $('introGrp').style.display = inv?'none':'block';
-    $('clientHead').textContent = inv?'Bill to':'Prepared for';
-    $('itemsHead').textContent = inv?'Items':'Scope &amp; pricing';
+    $('propTitleF').style.display = prop?'flex':'none';
+    $('introGrp').style.display = prop?'block':'none';
+    $('itemsGrp').style.display = agr?'none':'block';
+    $('payGrp').style.display = inv?'block':'none';
+    $('agrGrp').style.display = agr?'block':'none';
+    $('notesGrp').style.display = agr?'none':'block';
+    $('clientHead').textContent = inv?'Bill to':agr?'Client (second party)':'Prepared for';
+    $('itemsHead').textContent = inv?'Items':'Scope & pricing';
     $('bankF').style.display = inv?'flex':'none';
+    $('makeInvBtn').style.display = (prop && state.pstatus==='Approved')?'inline-block':'none';
+  }
+
+  window.clientSelChanged=function(){
+    var v=$('clientSel').value;
+    if(v==='new'){ state.clientId=''; }
+    else{ state.clientId=v; var c=clientById(v)||{}; state.clientSnap={name:c.name||'',company:c.company||'',email:c.email||'',phone:c.phone||'',address:c.address||''};
+      $('cname').value=state.clientSnap.name;$('ccompany').value=state.clientSnap.company;$('cemail').value=state.clientSnap.email;$('cphone').value=state.clientSnap.phone;$('caddress').value=state.clientSnap.address; }
+    clientFieldsVisibility();
+    $('invProposal').innerHTML=proposalOptions(state.proposalId,state.clientId);
+    $('agrProposal').innerHTML=proposalOptions(state.agr&&state.agr.proposalId,state.clientId);
+    update();
+  };
+  function clientFieldsVisibility(){
+    var isNew=$('clientSel').value==='new';
+    $('clientFields').style.display=isNew?'block':'none';
+    $('clientHint').style.display=isNew?'block':'none';
   }
 
   function renderItems(){
-    var box = $('itemsBox'); box.innerHTML='';
+    var box=$('itemsBox');box.innerHTML='';
     state.items.forEach(function(it,i){
-      var row=document.createElement('div'); row.className='item-row';
-      row.innerHTML =
-        '<input placeholder="Description" value="'+esc(it.desc)+'" data-i="'+i+'" data-k="desc">'+
-        '<input type="number" step="1" value="'+(it.qty)+'" data-i="'+i+'" data-k="qty">'+
-        '<input type="number" step="0.01" value="'+(it.rate)+'" data-i="'+i+'" data-k="rate">'+
-        '<button class="del" title="Remove" data-del="'+i+'">×</button>';
-      box.appendChild(row);
+      var r=document.createElement('div');r.className='item-row';
+      r.innerHTML='<input placeholder="Description" value="'+esc(it.desc)+'" data-i="'+i+'" data-k="desc"><input type="number" step="1" value="'+it.qty+'" data-i="'+i+'" data-k="qty"><input type="number" step="0.01" value="'+it.rate+'" data-i="'+i+'" data-k="rate"><button class="del" data-del="'+i+'">×</button>';
+      box.appendChild(r);
     });
-    box.querySelectorAll('input').forEach(function(inp){
-      inp.addEventListener('input', function(){
-        var i=+this.getAttribute('data-i'), k=this.getAttribute('data-k');
-        state.items[i][k] = (k==='desc') ? this.value : (parseFloat(this.value)||0);
-        render();
-      });
-    });
-    box.querySelectorAll('[data-del]').forEach(function(b){
-      b.addEventListener('click', function(){ state.items.splice(+this.getAttribute('data-del'),1); if(!state.items.length) state.items.push({desc:'',qty:1,rate:0}); renderItems(); render(); });
-    });
+    box.querySelectorAll('input').forEach(function(inp){inp.addEventListener('input',function(){var i=+this.getAttribute('data-i'),k=this.getAttribute('data-k');state.items[i][k]=(k==='desc')?this.value:(parseFloat(this.value)||0);render();});});
+    box.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){state.items.splice(+this.getAttribute('data-del'),1);if(!state.items.length)state.items.push({desc:'',qty:1,rate:0});renderItems();render();});});
   }
-  window.addItem = function(){ state.items.push({desc:'',qty:1,rate:0}); renderItems(); render(); };
+  window.addItem=function(){state.items.push({desc:'',qty:1,rate:0});renderItems();render();};
 
-  window.update = function(){
-    if(!state) return;
-    state.currency=$('currency').value; state.num=$('num').value; state.date=$('date').value;
-    state.dueDate=$('dueDate').value; state.status=$('status').value;
-    state.title=$('title').value; state.intro=$('intro').value;
-    state.client={name:$('cname').value,company:$('ccompany').value,email:$('cemail').value,phone:$('cphone').value,address:$('caddress').value};
-    state.taxPct=parseFloat($('tax').value)||0; state.notes=$('notes').value; state.bank=$('bank').value;
-    render();
+  function renderPays(){
+    var box=$('paysBox');box.innerHTML='';
+    (state.payments||[]).forEach(function(p,i){
+      var r=document.createElement('div');r.className='pay-row';
+      r.innerHTML='<input type="date" value="'+esc(p.date)+'" data-i="'+i+'" data-k="date"><input placeholder="e.g. Bank transfer" value="'+esc(p.note)+'" data-i="'+i+'" data-k="note"><input type="number" step="0.01" value="'+p.amount+'" data-i="'+i+'" data-k="amount"><button class="del" data-del="'+i+'">×</button>';
+      box.appendChild(r);
+    });
+    box.querySelectorAll('input').forEach(function(inp){inp.addEventListener('input',function(){var i=+this.getAttribute('data-i'),k=this.getAttribute('data-k');state.payments[i][k]=(k==='amount')?(parseFloat(this.value)||0):this.value;render();paySummary();});});
+    box.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){state.payments.splice(+this.getAttribute('data-del'),1);renderPays();render();paySummary();});});
+    paySummary();
+  }
+  window.addPay=function(){state.payments.push({date:todayISO(),note:'',amount:0});renderPays();render();};
+
+  function totals(doc){
+    doc=doc||state;var sub=0;(doc.items||[]).forEach(function(it){sub+=num2(it.qty)*num2(it.rate);});
+    var tax=sub*num2(doc.taxPct)/100;return {sub:sub,tax:tax,total:sub+tax};
+  }
+  function paidOf(doc){doc=doc||state;var p=0;(doc.payments||[]).forEach(function(x){p+=num2(x.amount);});return p;}
+  function payState(doc){
+    doc=doc||state;var t=totals(doc).total,p=paidOf(doc);
+    if(t>0&&p>=t-0.005)return 'full'; if(p>0)return 'part'; return 'unpaid';
+  }
+  function payLabel(st){return st==='full'?'FULL RECEIVED':st==='part'?'PARTIALLY RECEIVED':'UNPAID';}
+  function paySummary(){
+    if(state.type!=='invoice')return;
+    var t=totals().total,p=paidOf(),st=payState();
+    $('paySum').innerHTML='<span>Received: <b class="'+st+'">'+money(p)+'</b> / '+money(t)+'</span><span>Balance: <b>'+money(Math.max(t-p,0))+'</b> · '+payLabel(st)+'</span>';
+  }
+
+  window.update=function(){
+    if(!state)return;
+    state.currency=$('currency').value;state.num=$('num').value;state.date=$('date').value;
+    state.pstatus=$('pstatus').value;state.dueDate=$('dueDate').value;
+    state.title=$('title').value;state.intro=$('intro').value;
+    var sv=$('clientSel').value;
+    if(sv==='new'){
+      state.clientId='';
+      state.clientSnap={name:$('cname').value,company:$('ccompany').value,email:$('cemail').value,phone:$('cphone').value,address:$('caddress').value};
+    } else if(sv){
+      state.clientId=sv;
+      var sc=clientById(sv); if(sc) state.clientSnap={name:sc.name||'',company:sc.company||'',email:sc.email||'',phone:sc.phone||'',address:sc.address||''};
+    }
+    state.taxPct=parseFloat($('tax').value)||0;state.notes=$('notes').value;state.bank=$('bank').value;
+    state.proposalId=$('invProposal').value||'';
+    state.agr={proposalId:$('agrProposal').value||'',title:$('agrTitle').value,start:$('agrStart').value,duration:$('agrDuration').value,value:parseFloat($('agrValue').value)||0,pay:$('agrPay').value,warranty:$('agrWarranty').value,law:$('agrLaw').value,nda:$('agrNda').value==='1'};
+    applyTypeUI(); render(); paySummary();
+  };
+  window.agrProposalChanged=function(){
+    var p=docById($('agrProposal').value);
+    if(p){ if(!$('agrTitle').value) $('agrTitle').value=p.title||''; if(!(parseFloat($('agrValue').value)>0)) $('agrValue').value=totals(p).total; if(p.clientId){state.clientId=p.clientId;$('clientSel').innerHTML=clientOptions(p.clientId);clientFieldsVisibility();} }
+    update();
   };
 
-  function totals(){
-    var sub=0; state.items.forEach(function(it){ sub += (Number(it.qty)||0)*(Number(it.rate)||0); });
-    var tax = sub*(Number(state.taxPct)||0)/100;
-    return {sub:sub, tax:tax, total:sub+tax};
+  /* ---------- rendering ---------- */
+  function clientBlock(label){
+    var c=snapOf(state);var lines=[];
+    if(c.name)lines.push('<div class="nm">'+esc(c.name)+'</div>');
+    if(c.company)lines.push(esc(c.company));
+    if(c.address)lines.push(esc(c.address));
+    var cl=[];if(c.email)cl.push(esc(c.email));if(c.phone)cl.push(esc(c.phone));
+    if(cl.length)lines.push(cl.join(' · '));
+    if(!lines.length)lines.push('<span style="color:#b9b1a6">— client —</span>');
+    return '<div class="d-to"><div class="lbl">'+label+'</div>'+lines.join('<br>')+'</div>';
   }
 
   function render(){
-    var inv = state.type==='invoice';
-    var t = totals();
-    var anyPrice = state.items.some(function(it){ return (Number(it.rate)||0)>0; });
-    var rows = state.items.filter(function(it){ return it.desc || (Number(it.rate)||0)>0; }).map(function(it,i){
-      var amt=(Number(it.qty)||0)*(Number(it.rate)||0);
-      return '<tr><td>'+(i+1)+'</td><td>'+esc(it.desc)+'</td><td class="r">'+(Number(it.qty)||0)+'</td><td class="r">'+money(it.rate)+'</td><td class="r">'+money(amt)+'</td></tr>';
-    }).join('');
-
-    var meta = '<b>'+esc(state.num)+'</b><br>Date: '+esc(fmtDate(state.date));
-    if(inv){ if(state.dueDate) meta += '<br>Due: '+esc(fmtDate(state.dueDate)); meta += '<br><span class="d-status">'+esc(state.status)+'</span>'; }
-
-    var c=state.client;
-    var toLines = [];
-    if(c.name) toLines.push('<div class="nm">'+esc(c.name)+'</div>');
-    if(c.company) toLines.push(esc(c.company));
-    if(c.address) toLines.push(esc(c.address));
-    var cl=[]; if(c.email) cl.push(esc(c.email)); if(c.phone) cl.push(esc(c.phone));
-    if(cl.length) toLines.push(cl.join(' · '));
-    if(!toLines.length) toLines.push('<span style="color:#b9b1a6">— client —</span>');
-
-    var html =
-      '<div class="d-header"><div class="d-brand">'+MARK+'<div><div class="w">ARISE<b>STACK</b></div><div class="tag">AI Development · IT Solutions</div></div></div>'+
-        '<div class="d-contact"><b>info@arisestack.com</b><br>+92 333 8685105 · +92 302 7741277<br>arisestack.com<br>Pakistan · working worldwide</div></div>'+
+    var t=state.type;
+    if(t==='agreement'){$('doc').innerHTML=renderAgreement();fitPreview();return;}
+    var inv=t==='invoice';
+    var tt=totals();var anyPrice=state.items.some(function(it){return num2(it.rate)>0;});
+    var rows=state.items.filter(function(it){return it.desc||num2(it.rate)>0;}).map(function(it,i){
+      return '<tr><td>'+(i+1)+'</td><td>'+esc(it.desc)+'</td><td class="r">'+num2(it.qty)+'</td><td class="r">'+money(it.rate)+'</td><td class="r">'+money(num2(it.qty)*num2(it.rate))+'</td></tr>';}).join('');
+    var meta='<b>'+esc(state.num)+'</b><br>Date: '+esc(fmtDate(state.date));
+    if(inv){
+      if(state.dueDate)meta+='<br>Due: '+esc(fmtDate(state.dueDate));
+      var lp=docById(state.proposalId); if(lp)meta+='<br>Ref proposal: '+esc(lp.num);
+      var st=payState();meta+='<br><span class="d-status '+st+'">'+payLabel(st)+'</span>';
+    }else{
+      meta+='<br><span class="d-status">'+esc(state.pstatus||'Sent')+'</span>';
+    }
+    var html=HEADER+
       '<div class="d-title"><div class="t">'+(inv?'IN<span>VOICE</span>':'PRO<span>POSAL</span>')+'</div><div class="d-meta">'+meta+'</div></div>'+
-      '<div class="d-to"><div class="lbl">'+(inv?'Bill to':'Prepared for')+'</div>'+toLines.join('<br>')+'</div>';
-
-    if(!inv && state.title) html += '<div class="d-headline">'+esc(state.title)+'</div>';
-    if(!inv && state.intro) html += '<div class="d-intro">'+esc(state.intro)+'</div>';
-
+      clientBlock(inv?'Bill to':'Prepared for');
+    if(!inv&&state.title)html+='<div class="d-headline">'+esc(state.title)+'</div>';
+    if(!inv&&state.intro)html+='<div class="d-intro">'+esc(state.intro)+'</div>';
     if(rows){
-      html += '<table class="items"><thead><tr><th style="width:8mm">#</th><th>'+(inv?'Item / Description':'Scope item')+'</th><th class="r" style="width:14mm">Qty</th><th class="r" style="width:26mm">Rate</th><th class="r" style="width:28mm">Amount</th></tr></thead><tbody>'+rows+'</tbody></table>';
+      html+='<table class="items"><thead><tr><th style="width:8mm">#</th><th>'+(inv?'Item / Description':'Scope item')+'</th><th class="r" style="width:13mm">Qty</th><th class="r" style="width:25mm">Rate</th><th class="r" style="width:27mm">Amount</th></tr></thead><tbody>'+rows+'</tbody></table>';
       if(anyPrice){
-        html += '<div class="totals"><div class="tr"><span>Subtotal</span><span>'+money(t.sub)+'</span></div>';
-        if(state.taxPct) html += '<div class="tr"><span>Tax / GST ('+state.taxPct+'%)</span><span>'+money(t.tax)+'</span></div>';
-        html += '<div class="tr grand"><span>'+(inv?'Total Due':'Total')+'</span><b>'+money(t.total)+'</b></div></div>';
+        html+='<div class="totals"><div class="tr"><span>Subtotal</span><span>'+money(tt.sub)+'</span></div>';
+        if(state.taxPct)html+='<div class="tr"><span>Tax / GST ('+state.taxPct+'%)</span><span>'+money(tt.tax)+'</span></div>';
+        html+='<div class="tr grand"><span>'+(inv?'Total Due':'Total')+'</span><b>'+money(tt.total)+'</b></div>';
+        if(inv&&(state.payments||[]).length){
+          html+='<div class="tr rec"><span>Received</span><span>'+money(paidOf())+'</span></div>'+
+                '<div class="tr bal"><span>Balance</span><span>'+money(Math.max(tt.total-paidOf(),0))+'</span></div>';
+        }
+        html+='</div>';
       }
     }
+    if(inv&&(state.payments||[]).length){
+      var prow=state.payments.map(function(p){return '<tr><td>'+esc(fmtDate(p.date))+'</td><td>'+esc(p.note)+'</td><td class="r">'+money(p.amount)+'</td></tr>';}).join('');
+      html+='<div class="d-pay"><div class="lbl">Payments received</div><table class="pays"><thead><tr><th style="width:26mm">Date</th><th>Note</th><th class="r" style="width:30mm">Amount</th></tr></thead><tbody>'+prow+'</tbody></table></div>';
+    }
+    if(state.notes)html+='<div class="d-notes"><div class="lbl">'+(inv?'Notes':'Terms & notes')+'</div>'+esc(state.notes)+'</div>';
+    if(inv&&state.bank)html+='<div class="d-bank"><b>Payment details</b><br>'+esc(state.bank)+'</div>';
+    if(!inv)html+='<div class="d-sign"><div class="box"><div class="ln">For AriseStack</div></div><div class="box"><div class="ln">Accepted by (client)</div></div></div>';
+    html+=FOOTER;
+    $('doc').innerHTML=html;fitPreview();
+  }
 
-    if(state.notes) html += '<div class="d-notes"><div class="lbl">'+(inv?'Notes':'Terms &amp; notes')+'</div>'+esc(state.notes)+'</div>';
-    if(inv && state.bank) html += '<div class="d-bank"><b>Payment details</b><br>'+esc(state.bank)+'</div>';
+  /* ---------- agreement ---------- */
+  function renderAgreement(){
+    var a=state.agr||{},c=snapOf(state);
+    var clientName=c.company||c.name||'________________';
+    var contact=c.name||'________________';
+    var basedOn=docById(a.proposalId);
+    var val=num2(a.value)||(basedOn?totals(basedOn).total:0);
+    var valTxt=val>0?money(val):'as per the agreed proposal / quotation';
+    var scopeList='';
+    if(basedOn){scopeList='<ul>'+basedOn.items.filter(function(it){return it.desc;}).map(function(it){return '<li>'+esc(it.desc)+'</li>';}).join('')+'</ul>';}
+    var title=a.title||(basedOn?basedOn.title:'the agreed software / IT services project');
+    var meta='<b>'+esc(state.num)+'</b><br>Date: '+esc(fmtDate(state.date));
+    if(basedOn)meta+='<br>Ref proposal: '+esc(basedOn.num);
 
-    if(!inv) html += '<div class="d-sign"><div class="box"><div class="ln">For AriseStack</div></div><div class="box"><div class="ln">Accepted by (client)</div></div></div>';
+    var html=HEADER+
+      '<div class="d-title"><div class="t">SERVICES <span>AGREEMENT</span></div><div class="d-meta">'+meta+'</div></div>'+
+      '<div class="agr">'+
+      '<div class="recital"><b>This Services Agreement</b> ("Agreement") is made on <b>'+esc(fmtDate(state.date))+'</b> between:<br><br>'+
+      '<b>1. AriseStack</b> ("Service Provider"), contactable at info@arisestack.com, +92 333 8685105, arisestack.com; and<br>'+
+      '<b>2. '+esc(clientName)+'</b>'+(c.name&&c.company?(' (represented by '+esc(contact)+')'):'')+(c.address?(', '+esc(c.address)):'')+' ("Client").<br><br>'+
+      'Together the "Parties". The Parties agree as follows:</div>'+
 
-    html += '<div class="d-footer"><span><b>ARISE</b><span class="a">STACK</span> — We rise by making you rise.</span><span class="s">arisestack.com</span></div>';
+      '<h4>1. Project &amp; Scope of Work</h4>'+
+      '<p>The Service Provider shall design, develop, deliver, and/or maintain: <b>'+esc(title)+'</b>.'+(basedOn?' The detailed scope is defined in proposal <b>'+esc(basedOn.num)+'</b>, which forms an integral part of this Agreement:':'')+'</p>'+scopeList+
+      '<p>Any work outside this scope shall be treated as a change request under Clause 6.</p>'+
 
-    $('doc').innerHTML = html;
-    fitPreview();
+      '<h4>2. Development &amp; Delivery Standards</h4>'+
+      '<p>Development shall follow professional software engineering practices: version control, staged testing before release, and documentation of delivered components. Deliverables will be deployed to the environment agreed by the Parties (client premises, client cloud, or Service Provider-managed hosting).</p>'+
+
+      '<h4>3. Timeline &amp; Duration</h4>'+
+      '<p>The project shall commence on <b>'+esc(fmtDate(a.start)||'________')+'</b> with an estimated duration of <b>'+esc(a.duration||'________')+'</b>. Timelines depend on the Client providing timely access, information, approvals, and feedback; delays attributable to the Client extend the schedule accordingly. This Agreement remains in force until deliverables are accepted and dues settled, unless terminated under Clause 12.</p>'+
+
+      '<h4>4. Fees &amp; Payment Terms</h4>'+
+      '<p>The total contract value is <b>'+valTxt+'</b>. Payment terms: <b>'+esc(a.pay||'as mutually agreed in writing')+'</b>. Invoices are payable within 14 days unless stated otherwise. Late payment may suspend work under Clause 12. Taxes/levies, where applicable, are the Client’s responsibility unless stated otherwise in the invoice.</p>'+
+
+      '<h4>5. Client Responsibilities</h4>'+
+      '<ul><li>Provide accurate requirements, content, credentials, and timely approvals.</li>'+
+      '<li>Nominate a single point of contact authorised to give decisions.</li>'+
+      '<li>Provide access to necessary systems, premises, or third-party services.</li></ul>'+
+
+      '<h4>6. Change Requests</h4>'+
+      '<p>Changes to scope shall be requested in writing. The Service Provider will assess impact on cost and timeline and proceed only after the Client’s written approval.</p>'+
+
+      '<h4>7. Data Security &amp; Cybersecurity</h4>'+
+      '<p>The Service Provider shall apply industry-standard security measures to systems it builds or manages, including: hardened configurations, encrypted transport (HTTPS/TLS), role-based access control, and protection against common attack classes. Credentials and client data shall be handled on a need-to-know basis and never disclosed to third parties except as required to deliver the services or by law. The Client shall likewise protect credentials issued to it. No system can be warranted as absolutely secure; the Service Provider shall promptly notify the Client of any security incident affecting the Client’s systems that comes to its knowledge.</p>'+
+
+      '<h4>8. Backups &amp; Business Continuity</h4>'+
+      '<p>Where the Service Provider manages hosting, it shall implement scheduled backups of application data and reasonable recovery procedures. Where systems are hosted on Client infrastructure, backup responsibility rests with the Client unless a support arrangement states otherwise. Recovery objectives, if critical, shall be agreed in writing.</p>'+
+
+      '<h4>9. Confidentiality &amp; NDA</h4>'+
+      '<p>Each Party shall keep confidential all non-public information received from the other. '+(a.nda?'The Parties shall additionally execute the <b>Non-Disclosure Agreement attached as Annex A</b>, which the Client signs together with this Agreement and which survives its termination.':'A separate NDA may be executed at either Party’s request.')+'</p>'+
+
+      '<h4>10. Intellectual Property</h4>'+
+      '<p>Upon receipt of full payment, the Client owns the bespoke deliverables produced specifically for it under this Agreement. The Service Provider retains ownership of its pre-existing tools, libraries, frameworks, and know-how, granting the Client a perpetual, non-exclusive license to use them as embedded in the deliverables. Third-party/open-source components remain subject to their own licenses.</p>'+
+
+      '<h4>11. Warranty &amp; Support</h4>'+
+      '<p>The Service Provider warrants the deliverables will materially conform to the agreed scope and will remedy defects notified within <b>'+esc(a.warranty||'90 days of delivery')+'</b> at no charge. Ongoing support/maintenance beyond this period may be agreed under a separate arrangement.</p>'+
+
+      '<h4>12. Suspension &amp; Termination</h4>'+
+      '<p>Either Party may terminate for material breach not cured within 14 days of written notice. The Service Provider may suspend services for overdue payment. On termination, the Client shall pay for all work performed to date; delivered work is licensed/transferred only to the extent paid for.</p>'+
+
+      '<h4>13. Limitation of Liability</h4>'+
+      '<p>Neither Party is liable for indirect or consequential loss. The Service Provider’s total aggregate liability under this Agreement shall not exceed the fees actually paid by the Client under it.</p>'+
+
+      '<h4>14. Force Majeure</h4>'+
+      '<p>Neither Party is liable for delay or failure caused by events beyond reasonable control (natural disasters, war, strikes, utility or network failures, government actions).</p>'+
+
+      '<h4>15. Governing Law &amp; Disputes</h4>'+
+      '<p>This Agreement is governed by the laws of <b>'+esc(a.law||'Pakistan')+'</b>. The Parties shall first attempt amicable resolution; failing that, disputes fall to the competent courts of '+esc(a.law||'Pakistan')+'.</p>'+
+
+      '<h4>16. Entire Agreement</h4>'+
+      '<p>This Agreement'+(basedOn?', proposal '+esc(basedOn.num)+',':'')+(a.nda?' and Annex A (NDA)':'')+' constitute the entire agreement between the Parties and supersede prior discussions. Amendments must be in writing and signed by both Parties.</p>'+
+
+      '<div class="d-sign"><div class="box"><div class="ln"><b>For AriseStack</b><br>Name, signature &amp; date</div></div><div class="box"><div class="ln"><b>For '+esc(clientName)+'</b><br>Name, signature &amp; date</div></div></div>'+
+      '</div>';
+
+    if(a.nda){
+      html+='<div class="pb agr">'+
+      '<div class="d-title"><div class="t">ANNEX A — <span>NDA</span></div><div class="d-meta"><b>NDA-'+esc(state.num.replace(/^AGR-/,''))+'</b><br>Date: '+esc(fmtDate(state.date))+'</div></div>'+
+      '<div class="recital"><b>Mutual Non-Disclosure Agreement</b> between <b>AriseStack</b> and <b>'+esc(clientName)+'</b>, executed together with Services Agreement '+esc(state.num)+'. The Client’s signature below is a condition of the Services Agreement.</div>'+
+      '<h4>1. Confidential Information</h4><p>"Confidential Information" means all non-public business, technical, financial, security, and personal information disclosed by either Party, in any form, including source code, architectures, credentials, data, pricing, and business plans.</p>'+
+      '<h4>2. Obligations</h4><p>Each Party shall (a) use Confidential Information solely for the project; (b) protect it with at least the care used for its own confidential information; (c) restrict access to personnel who need it and are bound by equivalent obligations; and (d) not disclose it to any third party without prior written consent.</p>'+
+      '<h4>3. Exclusions</h4><p>Information that is public through no fault of the receiver, already lawfully known, independently developed, or required to be disclosed by law (with prompt notice where permitted) is not Confidential Information.</p>'+
+      '<h4>4. Term</h4><p>These obligations start on the date above and continue for <b>three (3) years</b> after termination of the Services Agreement; trade secrets remain protected for as long as they remain trade secrets.</p>'+
+      '<h4>5. Return or Destruction</h4><p>On request or termination, each Party shall return or destroy the other’s Confidential Information, except archival copies required by law.</p>'+
+      '<h4>6. No License</h4><p>No rights or licenses are granted by disclosure, except as expressly stated in the Services Agreement.</p>'+
+      '<h4>7. Remedies</h4><p>Unauthorised disclosure may cause irreparable harm; the injured Party may seek injunctive relief in addition to other remedies.</p>'+
+      '<h4>8. Governing Law</h4><p>This NDA is governed by the laws of '+esc(a.law||'Pakistan')+'.</p>'+
+      '<div class="d-sign"><div class="box"><div class="ln"><b>For AriseStack</b><br>Name, signature &amp; date</div></div><div class="box"><div class="ln"><b>For '+esc(clientName)+'</b><br>Name, signature &amp; date</div></div></div>'+
+      '</div>';
+    }
+    html+=FOOTER;
+    return html;
   }
 
   function fitPreview(){
-    var wrap=$('previewWrap'), doc=$('doc');
+    var wrap=$('previewWrap'),doc=$('doc');
     doc.style.transform='none';
-    var avail = wrap.clientWidth - 44;
-    var w = doc.offsetWidth;
-    if(w>avail){ doc.style.transform='scale('+(avail/w)+')'; }
+    var avail=wrap.clientWidth-44,w=doc.offsetWidth;
+    if(w>avail)doc.style.transform='scale('+(avail/w)+')';
   }
-  window.addEventListener('resize', function(){ if(state) fitPreview(); });
+  window.addEventListener('resize',function(){if(state)fitPreview();});
 
-  window.saveDoc = function(){
+  /* ---------- save / clients auto-add ---------- */
+  window.saveDoc=function(){
     update();
-    var all = load();
-    var idx = all.findIndex(function(d){ return d.id===state.id; });
-    var copy = JSON.parse(JSON.stringify(state));
-    copy.savedAt = Date.now();
-    if(idx>=0) all[idx]=copy; else all.unshift(copy);
-    saveAll(all);
+    var d=db();
+    // auto-add client
+    if(!state.clientId){
+      var s=state.clientSnap||{};
+      if(s.name||s.company){
+        // reuse an existing client with the same name+company (no duplicates)
+        var key=((s.company||'')+'|'+(s.name||'')).toLowerCase().trim();
+        var c=d.clients.find(function(x){return ((x.company||'')+'|'+(x.name||'')).toLowerCase().trim()===key;});
+        if(!c){
+          c={id:uid('c'),name:s.name||'',company:s.company||'',email:s.email||'',phone:s.phone||'',address:s.address||'',tax:'',notes:'(auto-added from '+state.num+' — complete details later)',createdAt:Date.now()};
+          d.clients.push(c);
+        }
+        state.clientId=c.id;
+        $('clientSel').innerHTML=clientOptions(c.id);$('clientSel').value=c.id;clientFieldsVisibility();
+      }
+    }
+    var idx=d.docs.findIndex(function(x){return x.id===state.id;});
+    var copy=JSON.parse(JSON.stringify(state));copy.savedAt=Date.now();
+    if(idx>=0)d.docs[idx]=copy;else d.docs.unshift(copy);
+    saveDb(d);
     $('delBtn').style.display='inline-block';
-    setSaved('✓ Saved to this browser ('+state.num+'). Find it under Records.');
+    setSaved('✓ Saved ('+state.num+').'+(state.clientId?'':' Client will be added when a name/company is present.'));
   };
-  function setSaved(m){ $('saveNote').textContent=m; if(m) setTimeout(function(){ if($('saveNote').textContent===m) $('saveNote').textContent=''; }, 4000); }
+  function setSaved(m){$('saveNote').textContent=m;if(m)setTimeout(function(){if($('saveNote').textContent===m)$('saveNote').textContent='';},4500);}
 
-  window.deleteCurrent = function(){
-    if(!confirm('Delete '+state.num+'? This cannot be undone.')) return;
-    saveAll(load().filter(function(d){ return d.id!==state.id; }));
+  window.deleteCurrent=function(){
+    if(!confirm('Delete '+state.num+'?'))return;
+    var d=db();d.docs=d.docs.filter(function(x){return x.id!==state.id;});saveDb(d);
     newDoc(state.type);
   };
 
-  window.switchTab = function(tab){
-    document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-tab')===tab); });
-    if(tab==='records'){ $('workspace').style.display='none'; $('records').hidden=false; renderRecords(); }
-    else { $('records').hidden=true; $('workspace').style.display='grid'; if(!state || state.type!==tab) newDoc(tab); fitPreview(); }
+  window.createInvoiceFromProposal=function(){
+    update();
+    if(state.type!=='proposal')return;
+    // ensure proposal saved first
+    saveDoc();
+    var propId=state.id, prop=JSON.parse(JSON.stringify(state));
+    var inv={
+      id:uid('d'),type:'invoice',num:nextNum('invoice'),date:todayISO(),dueDate:'',
+      clientId:prop.clientId,clientSnap:prop.clientSnap,currency:prop.currency,
+      title:'',intro:'',items:prop.items,taxPct:prop.taxPct,
+      notes:'As per approved proposal '+prop.num+'.',bank:'',payments:[],proposalId:propId,
+      pstatus:'',linkedInvoiceIds:[],agr:state.agr
+    };
+    var d=db();
+    d.docs.unshift(inv);
+    var p=d.docs.find(function(x){return x.id===propId;});
+    if(p){p.linkedInvoiceIds=p.linkedInvoiceIds||[];p.linkedInvoiceIds.push(inv.id);}
+    saveDb(d);
+    state=JSON.parse(JSON.stringify(inv));window.state=state;
+    switchTab('invoice',true);fillEditor();render();
+    $('delBtn').style.display='inline-block';
+    setSaved('✓ Invoice '+inv.num+' created and linked to '+prop.num+'.');
   };
 
-  function renderRecords(){
-    var all = load();
-    if(!all.length){ $('recBox').innerHTML='<div class="empty">No saved documents yet. Create a proposal or invoice, then hit <b>Save</b>.</div>'; return; }
-    var rows = all.map(function(d){
-      var tt = d.items ? d.items.reduce(function(s,it){ return s+(Number(it.qty)||0)*(Number(it.rate)||0); },0) : 0;
-      var tax = tt*(Number(d.taxPct)||0)/100; var grand=tt+tax;
-      var cur=d.currency||'Rs';
-      var who = d.client && (d.client.company || d.client.name) || '—';
-      return '<tr>'+
-        '<td><span class="type '+d.type+'">'+d.type+'</span></td>'+
-        '<td><b>'+esc(d.num)+'</b></td>'+
-        '<td>'+esc(who)+'</td>'+
-        '<td>'+esc(fmtDate(d.date))+'</td>'+
-        '<td class="r">'+cur+' '+grand.toLocaleString('en-US',{maximumFractionDigits:0})+'</td>'+
-        '<td>'+esc(d.status||'')+'</td>'+
-        '<td style="text-align:right;white-space:nowrap">'+
-          '<button class="mini" data-open="'+d.id+'">Open</button>'+
-          '<button class="mini" data-dup="'+d.id+'">Duplicate</button>'+
-          '<button class="mini del" data-del="'+d.id+'">Delete</button>'+
-        '</td></tr>';
+  /* ---------- tabs ---------- */
+  window.switchTab=function(tab,noNew){
+    document.querySelectorAll('.tab').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-tab')===tab);});
+    var views={clients:'clientsView',records:'recordsView',report:'reportView'};
+    $('workspace').style.display=(tab in views)?'none':'grid';
+    Object.keys(views).forEach(function(k){$(views[k]).hidden=(k!==tab);});
+    if(tab==='clients')renderClients();
+    else if(tab==='records')renderRecords();
+    else if(tab==='report')renderReport();
+    else{ if(!noNew&&(!state||state.type!==tab))newDoc(tab); fitPreview(); }
+  };
+
+  /* ---------- clients view ---------- */
+  window.saveClientForm=function(){
+    var id=$('clEditId').value;
+    var c={name:$('clName').value.trim(),company:$('clCompany').value.trim(),email:$('clEmail').value.trim(),phone:$('clPhone').value.trim(),address:$('clAddress').value.trim(),tax:$('clTax').value.trim(),notes:$('clNotes').value.trim()};
+    if(!c.name&&!c.company){$('clNote').textContent='Enter at least a name or company.';return;}
+    var d=db();
+    if(id){var ex=d.clients.find(function(x){return x.id===id;});if(ex)Object.assign(ex,c);}
+    else{c.id=uid('c');c.createdAt=Date.now();d.clients.push(c);}
+    saveDb(d);clearClientForm();renderClients();
+    $('clNote').textContent='✓ Client saved.';setTimeout(function(){$('clNote').textContent='';},3000);
+  };
+  window.clearClientForm=function(){['clEditId','clName','clCompany','clEmail','clPhone','clAddress','clTax','clNotes'].forEach(function(i){$(i).value='';});};
+  function renderClients(){
+    var d=db();
+    if(!d.clients.length){$('clientListBox').innerHTML='<div class="empty">No clients yet — add one above, or they’re added automatically when you save a proposal/invoice for a new client.</div>';return;}
+    var rows=d.clients.map(function(c){
+      var docs=d.docs.filter(function(x){return x.clientId===c.id;});
+      return '<tr><td><b>'+esc(c.company||'—')+'</b></td><td>'+esc(c.name)+'</td><td>'+esc(c.email||'—')+'</td><td>'+esc(c.phone||'—')+'</td><td class="r">'+docs.length+'</td>'+
+        '<td style="text-align:right;white-space:nowrap"><button class="mini" data-ed="'+c.id+'">Edit</button><button class="mini del" data-del="'+c.id+'">Delete</button></td></tr>';
     }).join('');
-    $('recBox').innerHTML = '<table class="rec"><thead><tr><th>Type</th><th>Number</th><th>Client</th><th>Date</th><th class="r">Total</th><th>Status</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>';
-    $('recBox').querySelectorAll('[data-open]').forEach(function(b){ b.onclick=function(){ openDoc(this.getAttribute('data-open')); }; });
-    $('recBox').querySelectorAll('[data-dup]').forEach(function(b){ b.onclick=function(){ dupDoc(this.getAttribute('data-dup')); }; });
-    $('recBox').querySelectorAll('[data-del]').forEach(function(b){ b.onclick=function(){ var id=this.getAttribute('data-del'); if(confirm('Delete this record?')){ saveAll(load().filter(function(d){return d.id!==id;})); renderRecords(); } }; });
+    $('clientListBox').innerHTML='<table class="rec"><thead><tr><th>Company</th><th>Contact</th><th>Email</th><th>Phone</th><th class="r">Docs</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>';
+    $('clientListBox').querySelectorAll('[data-ed]').forEach(function(b){b.onclick=function(){var c=clientById(this.getAttribute('data-ed'));if(!c)return;$('clEditId').value=c.id;$('clName').value=c.name;$('clCompany').value=c.company;$('clEmail').value=c.email;$('clPhone').value=c.phone;$('clAddress').value=c.address;$('clTax').value=c.tax||'';$('clNotes').value=c.notes||'';window.scrollTo({top:0,behavior:'smooth'});};});
+    $('clientListBox').querySelectorAll('[data-del]').forEach(function(b){b.onclick=function(){var id=this.getAttribute('data-del');if(confirm('Delete this client? (documents keep their saved snapshot)')){var d2=db();d2.clients=d2.clients.filter(function(x){return x.id!==id;});d2.docs.forEach(function(x){if(x.clientId===id){x.clientSnap=x.clientSnap&&x.clientSnap.name?x.clientSnap:snapOf(x);x.clientId='';}});saveDb(d2);renderClients();}};});
   }
 
+  /* ---------- records ---------- */
+  function statusOf(doc){
+    if(doc.type==='invoice'){var st=payState(doc);return '<span class="chip '+st+'">'+payLabel(st)+'</span>';}
+    if(doc.type==='proposal'){var s=(doc.pstatus||'Sent').toLowerCase();return '<span class="chip '+s+'">'+esc(doc.pstatus||'Sent')+'</span>';}
+    return '<span class="chip sent">Prepared</span>';
+  }
+  function renderRecords(){
+    var d=db();
+    if(!d.docs.length){$('recBox').innerHTML='<div class="empty">No saved documents yet.</div>';return;}
+    var rows=d.docs.map(function(x){
+      var t=totals(x).total,c=snapOf(x),who=c.company||c.name||'—';
+      return '<tr><td><span class="type '+x.type+'">'+x.type+'</span></td><td><b>'+esc(x.num)+'</b></td><td>'+esc(who)+'</td><td>'+esc(fmtDate(x.date))+'</td>'+
+        '<td class="r">'+(x.type==='agreement'?'—':money(t,x.currency))+'</td><td>'+statusOf(x)+'</td>'+
+        '<td style="text-align:right;white-space:nowrap"><button class="mini" data-open="'+x.id+'">Open</button><button class="mini" data-dup="'+x.id+'">Duplicate</button><button class="mini del" data-del="'+x.id+'">Delete</button></td></tr>';
+    }).join('');
+    $('recBox').innerHTML='<table class="rec"><thead><tr><th>Type</th><th>Number</th><th>Client</th><th>Date</th><th class="r">Total</th><th>Status</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>';
+    wireRowActions($('recBox'));
+  }
+  function wireRowActions(box){
+    box.querySelectorAll('[data-open]').forEach(function(b){b.onclick=function(){openDoc(this.getAttribute('data-open'));};});
+    box.querySelectorAll('[data-dup]').forEach(function(b){b.onclick=function(){dupDoc(this.getAttribute('data-dup'));};});
+    box.querySelectorAll('[data-del]').forEach(function(b){b.onclick=function(){var id=this.getAttribute('data-del');if(confirm('Delete this record?')){var d=db();d.docs=d.docs.filter(function(x){return x.id!==id;});saveDb(d);renderRecords();renderReport();}};});
+  }
   function openDoc(id){
-    var d = load().find(function(x){ return x.id===id; }); if(!d) return;
-    state = JSON.parse(JSON.stringify(d)); window.state=state;
-    switchTab(state.type);
-    fillEditor(); render();
+    var x=docById(id);if(!x)return;
+    state=JSON.parse(JSON.stringify(x));window.state=state;
+    switchTab(state.type,true);fillEditor();render();
     $('delBtn').style.display='inline-block';
   }
   function dupDoc(id){
-    var d = load().find(function(x){ return x.id===id; }); if(!d) return;
-    state = JSON.parse(JSON.stringify(d)); state.id=uid(); state.num=nextNum(state.type); state.date=todayISO(); state.status=state.type==='invoice'?'Draft':'Sent'; window.state=state;
-    switchTab(state.type); fillEditor(); render(); $('delBtn').style.display='none';
+    var x=docById(id);if(!x)return;
+    state=JSON.parse(JSON.stringify(x));state.id=uid('d');state.num=nextNum(state.type);state.date=todayISO();state.payments=[];state.linkedInvoiceIds=[];window.state=state;
+    switchTab(state.type,true);fillEditor();render();$('delBtn').style.display='none';
     setSaved('Duplicated as '+state.num+' — edit and Save.');
   }
 
-  // boot
+  /* ---------- report ---------- */
+  function renderReport(){
+    var d=db();
+    var groups={};
+    d.docs.forEach(function(x){var k=x.clientId||('snap:'+((x.clientSnap&&(x.clientSnap.company||x.clientSnap.name))||'Unknown'));(groups[k]=groups[k]||[]).push(x);});
+    var keys=Object.keys(groups);
+    if(!keys.length){$('repBox').innerHTML='<div class="empty">Nothing to report yet — create proposals and invoices first.</div>';return;}
+    var out='';
+    keys.forEach(function(k){
+      var docs=groups[k];
+      var c=k.indexOf('snap:')===0?{company:k.slice(5)}:clientById(k)||{};
+      var props=docs.filter(function(x){return x.type==='proposal';});
+      var invs=docs.filter(function(x){return x.type==='invoice';});
+      var agrs=docs.filter(function(x){return x.type==='agreement';});
+      var invTotal=0,invPaid=0;
+      invs.forEach(function(iv){invTotal+=totals(iv).total;invPaid+=paidOf(iv);});
+      var rows='';
+      props.forEach(function(p){
+        var linked=(p.linkedInvoiceIds||[]).map(function(id){return docById(id);}).filter(Boolean);
+        var linkTxt=linked.length?linked.map(function(iv){var st=payState(iv);return esc(iv.num)+' <span class="chip '+st+'">'+payLabel(st)+'</span>';}).join('<br>'):'<span style="color:#b9b1a6">not invoiced</span>';
+        rows+='<tr><td><span class="type proposal">proposal</span></td><td><b>'+esc(p.num)+'</b><br><span style="color:var(--muted);font-size:12px">'+esc(p.title||'')+'</span></td><td>'+esc(fmtDate(p.date))+'</td><td class="r">'+money(totals(p).total,p.currency)+'</td><td>'+statusOf(p)+'</td><td>'+linkTxt+'</td></tr>';
+      });
+      invs.forEach(function(iv){
+        var t=totals(iv).total,p2=paidOf(iv);
+        var ref=iv.proposalId?(docById(iv.proposalId)||{}).num||'':'';
+        rows+='<tr><td><span class="type invoice">invoice</span></td><td><b>'+esc(iv.num)+'</b>'+(ref?'<br><span style="color:var(--muted);font-size:12px">ref '+esc(ref)+'</span>':'')+'</td><td>'+esc(fmtDate(iv.date))+'</td><td class="r">'+money(t,iv.currency)+'<br><span style="color:#2e7d32;font-size:12px">paid '+money(p2,iv.currency)+'</span></td><td>'+statusOf(iv)+'</td><td>'+(t-p2>0.005?('balance <b>'+money(t-p2,iv.currency)+'</b>'):'—')+'</td></tr>';
+      });
+      agrs.forEach(function(ag){rows+='<tr><td><span class="type agreement">agreement</span></td><td><b>'+esc(ag.num)+'</b></td><td>'+esc(fmtDate(ag.date))+'</td><td class="r">—</td><td><span class="chip sent">Prepared</span></td><td>'+(ag.agr&&ag.agr.nda?'incl. NDA':'')+'</td></tr>';});
+      out+='<div class="client-card"><h3>'+esc(c.company||c.name||'Unknown client')+'</h3>'+
+        '<div class="sub">'+esc(c.name&&c.company?c.name:'')+(c.email?' · '+esc(c.email):'')+(c.phone?' · '+esc(c.phone):'')+'</div>'+
+        '<table class="rec rep-tbl"><thead><tr><th>Type</th><th>Document</th><th>Date</th><th class="r">Amount</th><th>Status</th><th>Linked / balance</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+        '<div class="rep-sum"><span>Proposals: <b>'+props.length+'</b></span><span>Invoices: <b>'+invs.length+'</b></span><span>Invoiced: <b>'+money(invTotal)+'</b></span><span>Received: <b style="color:#2e7d32">'+money(invPaid)+'</b></span><span>Outstanding: <b style="color:#b5502a">'+money(Math.max(invTotal-invPaid,0))+'</b></span></div>'+
+        '</div>';
+    });
+    $('repBox').innerHTML=out;
+  }
+
+  // expose for other handlers
+  window.renderClients=renderClients;window.renderRecords=renderRecords;window.renderReport=renderReport;
+
   newDoc('proposal');
 })();
 </script>
