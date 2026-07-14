@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AriseStack — Letterhead</title>
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#161210;--copper:#92400e;--amber:#d97706;--gold:#fcd34d;--muted:#6b6257;--line:#e7e0d6}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#c9c4bd;font-family:'Outfit',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif}
+
+  .sheet{width:210mm;min-height:297mm;background:#fff;margin:8mm auto;position:relative;box-shadow:0 8px 34px rgba(0,0,0,.25);padding:22mm 20mm 26mm}
+
+  /* top copper band */
+  .sheet::before{content:'';position:absolute;left:0;top:0;right:0;height:3mm;background:linear-gradient(90deg,var(--copper),var(--amber),var(--gold))}
+
+  .lh-header{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:6mm;border-bottom:1.5px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:4mm}
+  .lh-mark{width:16mm;height:auto}
+  .brand .word{font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:.06em;color:var(--ink)}
+  .brand .word b{color:var(--amber)}
+  .brand .tag{font-family:'Space Grotesk',sans-serif;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .lh-contact{text-align:right;font-size:10.5px;line-height:1.9;color:#4a443c}
+  .lh-contact b{color:var(--copper)}
+
+  .lh-body{padding:14mm 0;min-height:150mm;color:var(--muted);font-size:12px}
+  .placeholder{color:#b9b1a6;font-style:italic}
+
+  .lh-footer{position:absolute;left:20mm;right:20mm;bottom:12mm;padding-top:5mm;border-top:1.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.06em;color:var(--muted)}
+  .lh-footer .s{letter-spacing:.16em;text-transform:uppercase}
+  .lh-footer b{color:var(--ink)}.lh-footer .a{color:var(--amber)}
+
+  .hint{max-width:210mm;margin:6mm auto 0;padding:5mm;background:#fff;border:1px dashed var(--amber);border-radius:3mm;color:var(--muted);font-size:12px;text-align:center}
+  .hint b{color:var(--copper)}
+
+  @media print{
+    body{background:#fff}
+    .hint{display:none}
+    .sheet{margin:0;box-shadow:none;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+</style>
+</head>
+<body>
+<div class="hint">📄 <b>AriseStack Letterhead</b> — blank branded sheet. Print blank sheets, or save as PDF template (<b>Ctrl+P</b> → Save as PDF → enable <b>Background graphics</b>).</div>
+
+<div class="sheet">
+  <div class="lh-header">
+    <div class="brand">
+      <svg class="lh-mark" viewBox="-4 -18 104 102" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="la" gradientUnits="userSpaceOnUse" x1="48" y1="66" x2="48" y2="-8"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#161210"/></linearGradient></defs>
+        <path d="M 48 44 L 90 62 L 48 80 L 6 62 Z" fill="#fcd34d"/>
+        <path d="M 48 24 L 90 42 L 48 60 L 6 42 Z" fill="#d97706"/>
+        <path d="M 48 4 L 80 17.7 Q 90 22 80 26.3 L 48 40 L 16 26.3 Q 6 22 16 17.7 Z" fill="#92400e"/>
+        <path d="M 48 66 L 48 -8" fill="none" stroke="url(#la)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 36 2 L 48 -12 L 60 2" fill="none" stroke="#161210" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="word">ARISE<b>STACK</b></div>
+        <div class="tag">AI Development · IT Solutions</div>
+      </div>
+    </div>
+    <div class="lh-contact">
+      <b>info@arisestack.com</b><br>
+      +92 333 8685105 · +92 302 7741277<br>
+      arisestack.com<br>
+      Pakistan · working worldwide
+    </div>
+  </div>
+
+  <div class="lh-body"></div>
+
+  <div class="lh-footer">
+    <span><b>ARISE</b><span class="a">STACK</span> — We rise by making you rise.</span>
+    <span class="s">arisestack.com</span>
+  </div>
+</div>
+<script>if(location.search.indexOf('clean')>-1){var h=document.querySelector('.hint');if(h)h.style.display='none';document.body.style.background='#fff';}</script>
+</body>
+</html>
