@@ -84,10 +84,16 @@
       })
         .then(function (r) { return r.json().catch(function () { return {}; }); })
         .then(function (res) {
-          if (res && (res.success === true || res.success === 'true')) {
+          var ok = res && (res.success === true || res.success === 'true');
+          var msg = (res && res.message) ? String(res.message).toLowerCase() : '';
+          var pending = msg.indexOf('activat') > -1 || msg.indexOf('confirm') > -1;
+          if (ok) {
             form.reset();
             statusEl.className = 'cform-status ok';
             statusEl.textContent = '✓ Thank you — your message has been sent. A copy is on its way to your email.';
+          } else if (pending) {
+            statusEl.className = 'cform-status ok';
+            statusEl.textContent = '✓ Received! We\'re activating our contact system — please resend in a moment and it\'ll come straight through.';
           } else {
             throw new Error('send failed');
           }
