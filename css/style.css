@@ -1,21 +1,30 @@
 /* ============ AriseStack — brand styles ============ */
+/* Default theme: Daylight (light). Dark copper lives under [data-theme="ember"]. */
 :root{
-  --bg:#161210;
-  --bg-2:#1d1713;
+  --bg:#faf5ec;
+  --bg-2:#ffffff;
   --copper:#92400e;
   --amber:#d97706;
-  --gold:#fcd34d;
-  --warm-white:#fef8ec;
-  --taupe:#9a8163;
-  --bg-rgb:22,18,16;
+  --gold:#b45309;
+  --warm-white:#231a12;
+  --taupe:#8a7862;
+  --bg-rgb:250,245,236;
   --copper-rgb:146,64,14;
   --amber-rgb:217,119,6;
-  --gold-rgb:252,211,77;
-  --ink-rgb:254,248,236;
-  --line:rgba(var(--ink-rgb),.09);
-  --card:rgba(var(--ink-rgb),.028);
+  --gold-rgb:180,83,9;
+  --ink-rgb:35,26,18;
+  --line:rgba(35,26,18,.12);
+  --card:rgba(35,26,18,.03);
 }
 /* ---------- color themes (picker in nav) ---------- */
+html[data-theme="ember"]{
+  --bg:#161210;--bg-2:#1d1713;
+  --copper:#92400e;--amber:#d97706;--gold:#fcd34d;
+  --warm-white:#fef8ec;--taupe:#9a8163;
+  --bg-rgb:22,18,16;--copper-rgb:146,64,14;--amber-rgb:217,119,6;
+  --gold-rgb:252,211,77;--ink-rgb:254,248,236;
+  --line:rgba(254,248,236,.09);--card:rgba(254,248,236,.028);
+}
 html[data-theme="ocean"]{
   --bg:#0b1017;--bg-2:#111826;
   --copper:#0369a1;--amber:#0ea5e9;--gold:#7dd3fc;
@@ -37,17 +46,15 @@ html[data-theme="emerald"]{
   --bg-rgb:12,20,16;--copper-rgb:4,120,87;--amber-rgb:16,185,129;
   --gold-rgb:110,231,183;--ink-rgb:240,253,246;
 }
-html[data-theme="light"]{
-  --bg:#faf5ec;--bg-2:#ffffff;
-  --copper:#92400e;--amber:#d97706;--gold:#b45309;
-  --warm-white:#231a12;--taupe:#8a7862;
-  --bg-rgb:250,245,236;--copper-rgb:146,64,14;--amber-rgb:217,119,6;
-  --gold-rgb:180,83,9;--ink-rgb:35,26,18;
-  --line:rgba(35,26,18,.12);--card:rgba(35,26,18,.03);
-}
-html[data-theme="light"] .glow{opacity:.45}
-html[data-theme="light"] .nav.scrolled{background:rgba(250,245,236,.88)}
-html[data-theme="light"] .ember{opacity:0 !important}
+/* light-mode extras — apply to the Daylight default and the explicit light theme */
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .glow{opacity:.45}
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .nav.scrolled{background:rgba(250,245,236,.88)}
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .ember{opacity:0 !important}
+/* on light backgrounds, re-ink the logo arrow (cream stroke is invisible on cream) */
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .nav-mark path[stroke="#fef8ec"],
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .hero-mark path[stroke="#fef8ec"]{stroke:#231a12}
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .nav-mark path[stroke^="url"],
+html:not([data-theme="ember"]):not([data-theme="ocean"]):not([data-theme="royal"]):not([data-theme="emerald"]) .hero-mark path[stroke^="url"]{stroke:#b45309}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
