@@ -106,6 +106,23 @@
     });
   }
 
+  // --- visitor counter (self-hosted /api/visits) ---
+  var visitBox = document.getElementById('visitCount');
+  if (visitBox) {
+    var seen = false;
+    try { seen = !!sessionStorage.getItem('as_v'); } catch (e) {}
+    fetch('/api/visits', { method: seen ? 'GET' : 'POST' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) {
+        if (typeof d.total !== 'number') throw 0;
+        try { sessionStorage.setItem('as_v', '1'); } catch (e) {}
+        document.getElementById('visitTotal').textContent = d.total.toLocaleString('en-US');
+        visitBox.hidden = false;
+        visitBox.title = d.today.toLocaleString('en-US') + ' visitors today';
+      })
+      .catch(function () { /* counter offline — stay hidden */ });
+  }
+
   // --- color theme picker ---
   var themeBtn = document.getElementById('themeBtn');
   var themeMenu = document.getElementById('themeMenu');

@@ -528,3 +528,12 @@ a.info-card:hover{transform:translateY(-3px);border-color:rgba(var(--amber-rgb),
   .theme-pick{position:static}
   .theme-menu{right:16px;top:64px}
 }
+
+/* ---------- footer visitor counter ---------- */
+.visits{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.08em;
+  color:var(--taupe);
+}
+.visits svg{width:15px;height:15px;color:var(--amber)}
+.visits b{color:var(--warm-white);font-weight:600}
