@@ -190,8 +190,8 @@ a{color:inherit;text-decoration:none}
 }
 
 .hero-promise{
-  margin-top:10px;font-family:'Space Grotesk',sans-serif;
-  font-size:14px;letter-spacing:.06em;color:var(--amber);font-weight:500;
+  margin-top:18px;font-family:'Sora',sans-serif;font-weight:700;
+  font-size:clamp(22px,3.4vw,40px);letter-spacing:-.005em;line-height:1.15;
 }
 
 /* ---------- trust strip ---------- */
