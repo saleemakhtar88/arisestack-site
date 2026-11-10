@@ -478,6 +478,10 @@ a.info-card:hover{transform:translateY(-3px);border-color:rgba(var(--amber-rgb),
 .footer .w{color:var(--warm-white)}
 .footer .a{color:var(--amber)}
 .footer-slogan{letter-spacing:.24em;text-transform:uppercase}
+.footer-legal-row{padding-top:16px;padding-bottom:22px;border-top:1px solid var(--line);justify-content:center}
+.footer-legal{font-style:normal;letter-spacing:.04em;text-align:center;line-height:1.7}
+.footer-legal a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
+.footer-legal a:hover{color:var(--amber)}
 
 /* ---------- responsive ---------- */
 @media (max-width:900px){
